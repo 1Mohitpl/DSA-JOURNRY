@@ -1,109 +1,109 @@
-#include <iostream>
-#include <string>
-#include <vector>
+// #include <iostream>
+// #include <string>
+// #include <vector>
 
-using namespace std;
+// using namespace std;
 
-class Student
-{
-private:
-    string gf;
+// class Student
+// {
+// private:
+//     string gf;
 
-public:
-    int id;
-    int age;
-    bool present;
-    string name;
-    int nos;
-    int *v;
+// public:
+//     int id;
+//     int age;
+//     bool present;
+//     string name;
+//     int nos;
+//     int *v;
 
-    // ctor: Default ctor: assigns garbage value
-    // no khokhla student
-    Student()
-    {
-        cout << "Student ctor called" << endl;
-    }
+//     // ctor: Default ctor: assigns garbage value
+//     // no khokhla student
+//     Student()
+//     {
+//         cout << "Student ctor called" << endl;
+//     }
 
-    // paremeterized ctor
-    Student(int id, int age, bool present, string name, int nos, string gf)
-    {
-        this->id = id;
-        this->age = age;
-        this->present = present;
-        this->name = name;
-        this->nos = nos;
-        this->gf = gf;
-        this->v = new int(10);
-        cout << "Student paremeterized ctor called" << endl;
-    }
+//     // paremeterized ctor
+//     Student(int id, int age, bool present, string name, int nos, string gf)
+//     {
+//         this->id = id;
+//         this->age = age;
+//         this->present = present;
+//         this->name = name;
+//         this->nos = nos;
+//         this->gf = gf;
+//         this->v = new int(10);
+//         cout << "Student paremeterized ctor called" << endl;
+//     }
 
-    Student(int id, int age, bool present, string name, int nos)
-    {
-        this->id = id;
-        this->age = age;
-        this->present = present;
-        this->name = name;
-        this->nos = nos;
-        cout << "Student paremeterized ctor w/o gf called" << endl;
-    }
+//     Student(int id, int age, bool present, string name, int nos)
+//     {
+//         this->id = id;
+//         this->age = age;
+//         this->present = present;
+//         this->name = name;
+//         this->nos = nos;
+//         cout << "Student paremeterized ctor w/o gf called" << endl;
+//     }
 
-    // copy ctor
-    Student(const Student &srcobj)
-    {
-        cout << "Student copy ctor called" << endl;
-        this->name = srcobj.name;
-        this->age = srcobj.age;
-        this->gf = srcobj.gf;
-        this->nos = srcobj.nos;
-        this->present = srcobj.present;
-        this->id = srcobj.id;
-    }
+//     // copy ctor
+//     Student(const Student &srcobj)
+//     {
+//         cout << "Student copy ctor called" << endl;
+//         this->name = srcobj.name;
+//         this->age = srcobj.age;
+//         this->gf = srcobj.gf;
+//         this->nos = srcobj.nos;
+//         this->present = srcobj.present;
+//         this->id = srcobj.id;
+//     }
 
-    // getter / setter
-    string getGfName()
-    {
-        return gf;
-        // return this->gf;
-    }
+//     // getter / setter
+//     string getGfName()
+//     {
+//         return gf;
+//         // return this->gf;
+//     }
 
-    void setGfName(string gf)
-    {
-        this->gf = gf;
-    }
+//     void setGfName(string gf)
+//     {
+//         this->gf = gf;
+//     }
 
-    void study()
-    {
-        cout << "studying" << endl;
-    }
-    void sleep()
-    {
-        cout << "sleeping" << endl;
-    }
-    void bunk()
-    {
-        cout << "bunking" << endl;
-    }
+//     void study()
+//     {
+//         cout << "studying" << endl;
+//     }
+//     void sleep()
+//     {
+//         cout << "sleeping" << endl;
+//     }
+//     void bunk()
+//     {
+//         cout << "bunking" << endl;
+//     }
 
-    ~Student()
-    {
-        cout << "Student dtor called" << endl;
-        delete v;
-    }
+//     ~Student()
+//     {
+//         cout << "Student dtor called" << endl;
+//         delete v;
+//     }
 
-private:
-    void gfchatting()
-    {
-        cout << "Chatting" << endl;
-    }
+// private:
+//     void gfchatting()
+//     {
+//         cout << "Chatting" << endl;
+//     }
 
-    void cheating()
-    {
-        cout << "Cheating" << endl;
-    }
-};
+//     void cheating()
+//     {
+//         cout << "Cheating" << endl;
+//     }
+// };
 
-int main()
-{
+// int main()
+// {
     // cout << sizeof(Student) << endl;
     // Student s1;
 
@@ -144,13 +144,66 @@ int main()
     // cout << s1.name << endl;
     // cout << s2.name << endl;
 
-    Student s1(1, 12, 1, "Chota Bheem", 1);
-    cout << s1.name << endl;
-    cout << s1.getGfName() << endl;
+//     Student s1(1, 12, 1, "Chota Bheem", 1);
+//     cout << s1.name << endl;
+//     cout << s1.getGfName() << endl;
 
-    s1.setGfName("Indumati");
+//     s1.setGfName("Indumati");
 
-    cout << s1.getGfName() << endl;
+//     cout << s1.getGfName() << endl;
 
-    return 0;
+//     return 0;
+// }
+
+
+
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+using namespace std;
+class Doctor {
+ private:
+       string address;
+
+public:
+     
+     int id;
+     int age;
+     bool presentInChamber;
+     string name;
+     int noOfpatients ;
+    
+    // defalt constructor 
+
+    Doctor () {
+
+        cout << "deafalut ctor is called" << endl;
+    }
+
+    Doctor ( int id, int age, bool presentInChamber , string name, int noOfpatients){
+
+        
+        this->id = id;
+         this->age = age;
+         this->presentInChamber = presentInChamber;
+        this->name = name;
+        this->noOfpatients = noOfpatients;
+
+      cout << "Student paremeterized ctor called" << endl;
+
+    }
+    
+};
+
+int main () {
+   
+
+    Doctor D1 (7, 35, 1, "Rakesh roy", 10);
+    cout << D1.name << endl;
+    cout << D1.noOfpatients << endl;
+
+    // Student s3(2, 15, 0, "Lokesh", 5);
+    // cout << s3.name << endl;
 }
