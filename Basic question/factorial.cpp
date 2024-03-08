@@ -1,27 +1,29 @@
 #include<iostream>
-#include<bits/stdc++.h>
-using namespace std;
- 
- void rec (int no) {
-   
-    if (no == 0)
-    {
-       return;
-    }
-    
-       cout << no <<  " " ;         
-        rec (no-1);
+using namespace std ;
+
+
+
+ int  fact(int no) {
+       if (no == 1)
+       {
+         return 1;
+       }
+       else {
+                                                                  //  find factorial of any number using Recursion 
+           return no * fact (no-1);
+       }
+
+     
+
  }
-   
 
 int main () {
 
-     int no;
+     int num , f ;
      cout << "Enter an number" << endl;
-     cin >> no;
-
-     rec (no);
-
+     cin >> num;
+     f =  fact (num);
+    cout << f << endl;
 }
 
 
