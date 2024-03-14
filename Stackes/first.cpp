@@ -10,7 +10,7 @@ using namespace std;
 
 
       stack (int size) {
-           arr = new [int size] ;
+           arr = new int [size];
            this->size = size;
            this->top = -1;
              
@@ -68,11 +68,41 @@ using namespace std;
           
 
       }
+
+       int getSize () {
+         
+           return top +1;
+       }
+
+       void print () {
+        cout <<"Top" << top << endl;
+        cout << "Top element :" << getTop() << endl;
+        cout << "stack :" ;
+
+        for (int i = 0; i < getSize (); i++)
+        {
+           cout << arr[i]  << "  " << endl;
+        }
+         cout << endl << endl;
+       }
  };
 
 int main () {
+  
+  stack st (8) ;   // stack creation
 
-     
+  st.push (23);
+  st.print();
+
+  st.push(39);
+  st.print();
+
+
+  st.push(40);
+  st.print();
+
+ st.pop();
+ st.print();
 }
 
 
