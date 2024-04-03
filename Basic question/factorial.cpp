@@ -1,30 +1,30 @@
-#include<iostream>
-using namespace std ;
+// #include<iostream>
+// using namespace std ;
 
 
 
- int  fact(int no) {
-       if (no == 1)
-       {
-         return 1;
-       }
-       else {
-                                                                  //  find factorial of any number using Recursion 
-           return no * fact (no-1);
-       }
+//  int  fact(int no) {
+//        if (no == 1)
+//        {
+//          return 1;
+//        }
+//        else {
+//                                                                   //  find factorial of any number using Recursion 
+//            return no * fact (no-1);
+//        }
 
      
 
- }
+//  }
 
-int main () {
+// int main () {
 
-     int num , f ;
-     cout << "Enter an number" << endl;
-     cin >> num;
-     f =  fact (num);
-    cout << f << endl;
-}
+//      int num , f ;
+//      cout << "Enter an number" << endl;
+//      cin >> num;
+//      f =  fact (num);
+//     cout << f << endl;
+// }
 
 
 
