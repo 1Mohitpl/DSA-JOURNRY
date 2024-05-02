@@ -66,3 +66,38 @@ int main () {
 
      cout << "minimum number : " << result << endl;
 }
+
+
+#include<iostream>
+#include<limits.h>
+
+using namespace std ;
+
+int maxNumber = INT_MIN;
+  
+  int returnMax (int arr[] , int size) {
+
+     for (int i = 0; i < size; i++)                                  // find the maximum number of given array 
+     {
+          if (arr[i] > maxNumber ) 
+          {
+               maxNumber = arr[i];
+          }
+          
+     }
+
+     return maxNumber;
+     
+  }
+
+int main () {
+    
+    int arr [] = {2,10,12,7,9,11,14};
+
+    int size = 7;
+
+    int result = returnMax(arr, size);
+
+    cout << " maximum number in the given array is : " << result << endl;
+
+}
