@@ -32,72 +32,133 @@
 //     countZero( arr, size);
 // }
 
-#include<iostream>
-#include<limits.h>
-using namespace std;
+// #include<iostream>
+// #include<limits.h>
+// using namespace std;
 
 
-int findminnumber (int arr[], int total) {
+// int findminnumber (int arr[], int total) {
 
-    int minAns = INT_MAX;
+//     int minAns = INT_MAX;
 
-     for (int i = 0; i < total; i++)
-     {
-          if (arr[i] < minAns)
-          {                                                            // find minimum number in a array
-             minAns = arr[i];
-          }
+//      for (int i = 0; i < total; i++)
+//      {
+//           if (arr[i] < minAns)
+//           {                                                            // find minimum number in a array
+//              minAns = arr[i];
+//           }
           
-     }
-      return minAns;
-}  
+//      }
+//       return minAns;
+// }  
 
 
 
 
 
-int main () {
+// int main () {
      
-     int arr[] = {12,4,5,7,9,10,3,2};
+//      int arr[] = {12,4,5,7,9,10,3,2};
 
-     int total = 8;
+//      int total = 8;
 
-     int result = findminnumber(arr, total);
+//      int result = findminnumber(arr, total);
 
-     cout << "minimum number : " << result << endl;
-}
+//      cout << "minimum number : " << result << endl;
+// }
 
 
+// #include<iostream>
+// #include<limits.h>
+
+// using namespace std ;
+
+// int maxNumber = INT_MIN;
+  
+//   int returnMax (int arr[] , int size) {
+
+//      for (int i = 0; i < size; i++)                                  // find the maximum number of given array 
+//      {
+//           if (arr[i] > maxNumber ) 
+//           {
+//                maxNumber = arr[i];
+//           }
+          
+//      }
+
+//      return maxNumber;
+     
+//   }
+
+// int main () {
+    
+//     int arr [] = {2,10,12,7,9,11,14};
+
+//     int size = 7;
+
+//     int result = returnMax(arr, size);
+
+//     cout << " maximum number in the given array is : " << result << endl;
+
+// }
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++//
+// find the second largest Number in the given array 
 #include<iostream>
 #include<limits.h>
 
 using namespace std ;
 
-int maxNumber = INT_MIN;
-  
-  int returnMax (int arr[] , int size) {
+  int largest = INT_MIN;
 
-     for (int i = 0; i < size; i++)                                  // find the maximum number of given array 
-     {
-          if (arr[i] > maxNumber ) 
-          {
-               maxNumber = arr[i];
-          }
-          
-     }
 
-     return maxNumber;
-     
+  int largestNumber (int arr[], int size){
+  for (int i = 0; i < size; i++)
+  {
+           if (arr[i] > largest)
+           {
+               largest = arr[i];
+           }
+           
   }
+      return largest;
+                                                               
+  }
+      int secondNumbr = -1;
+    int secondLargestNum (int arr[], int size) {
+          
+           for (int i = 0; i < size; i++)
+           {
+                if (arr[i] > secondNumbr && arr[i] != largest)
+                {
+                     secondNumbr = arr[i];
+
+                }
+                
+           }
+           
+           return secondNumbr;
+
+    }
+
+
+
 
 int main () {
-    
-    int arr [] = {2,10,12,7,9,11,14};
 
-    int size = 7;
+   int arr[] = {3,5,8,2,1,9,7};
 
-    int result = returnMax(arr, size);
+   int size = 7;
 
-    cout << " maximum number in the given array is : " << result << endl;
+
+   int result = largestNumber(arr, size);
+   cout << "largest number is :" << result << endl;
+
+
+   int secNum =  secondLargestNum (arr, size);
+
+   cout << "second largest number is :" << secNum << endl;
 
 }
