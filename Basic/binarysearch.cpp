@@ -95,3 +95,44 @@ int main () {
 
 
 }
+
+
+//+++++++++++++++ find missing elemeent in the given array
+
+#include<iostream>
+using namespace std;
+
+int findMissing (int arr[], int n) {
+
+    int start = 0;
+    int end = n-1;
+    int mid = start+(end-start)/2;
+    int ans = -1;
+    while (start <=end){
+         int mid = start+(end-start)/2;
+        int diff = arr[mid]- mid;
+        if (diff==1)
+        {
+            //right shift
+            start = mid+1;
+
+        } else {
+            //ans store
+            ans = mid;
+            end = mid-1;
+
+        }
+        
+    }
+    return ans +1;
+}
+
+
+int main () {
+
+    int arr[] = {1,2,3,4,6,7,8,9};
+    int n = 8;
+    int result = findMissing(arr, n);
+    cout << "missing number is :" << result << endl;
+
+}
