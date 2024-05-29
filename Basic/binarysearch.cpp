@@ -130,7 +130,7 @@ int findMissing (int arr[], int n) {
 
 int main () {
 
-    int arr[] = {1,2,3,4,6,7,8,9};
+    int arr[] = {1,2,3,4,6,7,8,};
     int n = 8;
     int result = findMissing(arr, n);
     cout << "missing number is :" << result << endl;
