@@ -54,8 +54,7 @@ int main(){
     cout << G2.id << endl;
     cout << G2.age << endl; 
     // cout << G2.address <<endl;   // can't accecss
-
-
+   G2.excersie();
    
    
 }
