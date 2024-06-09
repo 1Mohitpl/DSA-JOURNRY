@@ -9,11 +9,12 @@ void printArray(int arr[], int n, int index){
         return ;
       }
 
-     cout << arr[index] << " ";
+    //  cout << arr[index] << " ";
 
      // recursive call
 
      printArray(arr, n, index+1);
+      cout << arr[index] << " ";
 }
 
 
