@@ -6,7 +6,7 @@ void printArray(int arr[], int n, int index){
 
       //base case 
       if(index >=n){
-        return ;
+        return ;                            // printing array of elements using recurrsion
       }
 
     //  cout << arr[index] << " ";
