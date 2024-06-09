@@ -2,21 +2,21 @@
 using namespace std;
 
 
-int pow(int x, int y){
-    if(y == 0){
+int pow(int n){
+    if(n == 0){
         return 1;
-
+                                                                  // pow of a number
     } else{
-        return x * pow(x, y-1);
+        return 2 * pow(n-1);           
     }
 }
 int main (){
-
-int x = 2;
-int y = 3;
-
-int ans = pow(x,y);
+int n;
+cout << "Enter your nuber : " << endl;
+cin >>n;
+int ans = pow(n);
 cout << ans << endl;
+
 
 
 
