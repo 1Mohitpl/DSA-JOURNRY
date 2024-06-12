@@ -1,43 +1,107 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-bool checkSortd(int arr[], int size, int index ){            // check if array is sorted or not 
-   // base case
-   if(index>=size){
-      return true;
-
-   }
-
-    if(arr[index] > arr[index-1]){
-      // shifting karna hoga
-      // then call recursion 
-
-      bool ans =  checkSortd(arr, size, index+1);
-      
-      return ans;
-    } else{
-      return false;
-    }
-}
-
-int main (){
-
-     int arr[] = {10,20,30,40,5,60};
-     int size = 6;
-     int index = 1;
-     
-    bool isorted = checkSortd(arr, size, index );
-
-    if (isorted)
-    {
-      cout << "Array  is sorted" << endl;
-
-    } else{
-
-       cout << "Array is not sorted" << endl;
+int targetElement(int arr[], int start, int end, int target) {
+    if (start > end) {
+        // Element is not found
+        return -1;
     }
     
+    int mid = start + (end - start) / 2;
+    
+    // Base case
+    if (arr[mid] == target) {                                            // using recursion in binary search to find an element in array and return index
+        return mid;
+    }
+    
+    if (arr[mid] < target) {
+        return targetElement(arr, mid + 1, end, target);
+    } else {
+        return targetElement(arr, start, mid - 1, target);
+    }
 }
+
+int main() {
+    int arr[] = {10, 20, 30, 40, 50, 60};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int start = 0;
+    int end = size - 1;
+    int target;
+    
+    cout << "Enter your target element: " << endl;
+    cin >> target;
+
+    int ans = targetElement(arr, start, end, target);
+    
+    if (ans != -1) {
+        cout << "Element found at index: " << ans << endl;
+    } else {
+        cout << "Element not found" << endl;
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// bool checkSortd(int arr[], int size, int index ){            // check if array is sorted or not 
+//    // base case
+//    if(index>=size){
+//       return true;
+
+//    }
+
+//     if(arr[index] > arr[index-1]){
+//       // shifting karna hoga
+//       // then call recursion 
+
+//       bool ans =  checkSortd(arr, size, index+1);
+      
+//       return ans;
+//     } else{
+//       return false;
+//     }
+// }
+
+// int main (){
+
+//      int arr[] = {10,20,30,40,5,60};
+//      int size = 6;
+//      int index = 1;
+     
+//     bool isorted = checkSortd(arr, size, index );
+
+//     if (isorted)
+//     {
+//       cout << "Array  is sorted" << endl;
+
+//     } else{
+
+//        cout << "Array is not sorted" << endl;
+//     }
+    
+// }
 
 
 
