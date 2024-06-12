@@ -1,31 +1,213 @@
 #include<iostream>
 using namespace std;
- // check in array if the element is preasent in the array or not using reccursion
 
-bool searchArray(int arr[], int n, int index, int target){
+bool checkSortd(int arr[], int size, int index ){            // check if array is sorted or not 
+   // base case
+   if(index>=size){
+      return true;
 
-    if(index>=n){
-        return false;
+   }
+
+    if(arr[index] > arr[index-1]){
+      // shifting karna hoga
+      // then call recursion 
+
+      bool ans =  checkSortd(arr, size, index+1);
+      
+      return ans;
+    } else{
+      return false;
     }
-     if (arr[index] == target)
-     {
-        return true;
-     }
-
-
-    return searchArray(arr, n, index+1, target);          
-     
 }
 
 int main (){
 
-    int arr[] = {10, 20,30, 40, 50, 60};
-    int n  = 6;
-    int index =0;
-    int target;
-    cout << "Enter your target element : " << endl;
-    cin>> target;
+     int arr[] = {10,20,30,40,5,60};
+     int size = 6;
+     int index = 1;
+     
+    bool isorted = checkSortd(arr, size, index );
 
-    bool ans = searchArray(arr, n, index, target);
-    cout << ans <<endl;
+    if (isorted)
+    {
+      cout << "Array  is sorted" << endl;
+
+    } else{
+
+       cout << "Array is not sorted" << endl;
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #include <iostream>
+// #include <limits.h>
+// #include <algorithm>
+// using namespace std;
+// // find maximum number in a array using recursion
+
+// void findMax(int arr[], int size, int index, int &maxi)
+// {
+//    if (index >= size)
+//    {
+//       return;
+//    }
+
+//    maxi = max(maxi, arr[index]);
+
+//    findMax(arr, size, index + 1, maxi);
+// }
+
+// int main()
+// {
+
+//    int arr[] = {10, 20, 30, 2, 50, 60};
+//    int size = 6;
+//    int index = 0;
+//    int maxi = INT_MIN;
+
+//    findMax(arr, size, index, maxi);
+//    cout << maxi << endl;
+// }
+
+// #include <iostream>
+// #include <algorithm>
+// #include <cl
+// using namespace std;
+// // take referrence
+// // solve ()=> store the even numbers in array into vector
+// void solve(int arr[], int n, int index, vector<int> &ans)
+// {
+//    if (index >= n)
+//    {
+//       return;
+//    }
+
+//    if (arr[index] % 2 == 0)
+//    {
+//       ans.push_back(arr[index]);
+//    }
+//    // recursive calling
+
+//    solve(arr, n, index + 1, ans);
+// }
+
+// int main()
+// {
+//    int arr[] = {10, 21, 30, 40, 55, 60};
+//    int size = 6;
+//    int index = 0;
+
+//    vector<int> ans;
+//    solve(arr, n, index, ans);
+
+//    for (int num : ans)
+//    {
+//       cout << num << " ";
+//    }
+// }
+
+// #include <iostream>
+// using namespace std;
+// // check in array if the element is preasent in the array or not using reccursion
+
+// bool searchArray(int arr[], int n, int index, int target)
+// {
+
+//    if (index >= n)
+//    {
+//       return false;
+//    }
+//    if (arr[index] == target)
+//    {
+//       return true;
+//    }
+
+//    return searchArray(arr, n, index + 1, target);
+// }
+
+// int main()
+// {
+
+//    int arr[] = {10, 20, 30, 40, 50, 60};
+//    int n = 6;
+//    int index = 0;
+//    int target;
+//    cout << "Enter your target element : " << endl;
+//    cin >> target;
+
+//    bool ans = searchArray(arr, n, index, target);
+//    cout << ans << endl;
+// }
