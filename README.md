@@ -21,8 +21,6 @@ See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
 
-## Features
-PARECEL IS BEAST, IT'S BUILTIN SERVER AUTOMATICALLY 
 
 
 
