@@ -16,77 +16,47 @@ public:
     string gender;
     int id;
 
-  // default constrator is called
-// Gymmmember(){
-//     cout << "default constracture is called" << endl;
-// }
+    // default constrator is called
+    // Gymmmember(){
+    //     cout << "default constracture is called" << endl;
+    // }
 
-//parametarised constractor is called 
+    // parametarised constractor is called
 
-Gymmmember(int _id, int _age, string _name, string _gender, string _address)
-{  
-    id = _id;
-    age = _age;
-    name = _name;
-    gender =  _gender;
-    address =  _address;
-
-}
-
-
-    void excersie(){
-        cout << "excersice"<< endl;
-
+    Gymmmember(int _id, int _age, string _name, string _gender, string _address)
+    {
+        id = _id;
+        age = _age;
+        name = _name;
+        gender = _gender;
+        address = _address;
     }
 
-    void leg() {
-      cout << "leg excercise" << endl;
+    void excersie()
+    {
+        cout << "excersice" << endl;
     }
 
-    void zumba() {
+    void leg()
+    {
+        cout << "leg excercise" << endl;
+    }
+
+    void zumba()
+    {
         cout << "zumba class" << endl;
     }
 };
 
-int main(){
+int main()
+{
 
     Gymmmember G2(2, 21, "Rahul", "male", "kokata");
     cout << G2.id << endl;
-    cout << G2.age << endl; 
+    cout << G2.age << endl;
     // cout << G2.address <<endl;   // can't accecss
-   G2.excersie();
-   
-   
+    G2.excersie();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // #include <iostream>
 // #include <string>
