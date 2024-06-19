@@ -3,8 +3,6 @@
 
 solving daily daily leetcode problems helps me to strong my problem skills. 
 
-you can checkout this repo =>
-https://github.com/1Mohitpl/DSA-JOURNRY/tree/468429219c9341f67c37dfea1404ae39882c3239/Leetcode
 
 ## Tech
 
