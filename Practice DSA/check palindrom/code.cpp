@@ -1,39 +1,49 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+// difin function
 
-bool checkpalin(int &x) // here passing parameter
- int temp = x;
- int rev = 0;
- 
-
- if(temp<0){
-    return false;
- }
-
-    while(temp>0){
-        int digit = x % 2;  // find the last degit;
-         rev = (rev * 10) + digit;
-         x = x / 10;
-    }
-
-    if(temp == rev){
-        return true;
-    }else{
+bool ispalindrom(int x)
+{
+    if (x < 0)
+    {
         return false;
     }
-int main(){
 
-    int x;
-    cout << "Enter an number :" << endl;
-    cin >>x;
-    int ans = checkpalin(x);
+    int temp;
+    temp = x;
+    int reverseNum = 0;
+    int digit;
+    while (x > 0)
+    {
+        digit = x % 10;                          // find it last digit
+        reverseNum = (reverseNum * 10) + digit; // put that digit into the reversenum
+        x = x/ 10;
+    }
 
-    if(ans == 1){
+    if (temp == reverseNum)
+    {
         return true;
     } else{
         return false;
     }
+    
+   
+}
 
+int main()
+{
+    int x;
+    cout << "Enter an input number :" << endl;
+    cin >> x;
 
+  int ans = ispalindrom(x);
+    if (ans == 1)
+    {
+        cout << "the number is palindrom" << endl;
+    }
+    else
+    {
+        cout << "Number is not a palindrom number" << endl;
+    }
 }
