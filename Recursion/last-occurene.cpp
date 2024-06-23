@@ -7,7 +7,7 @@ void lastoccurence(string str, int i, char target, int &ans){   // here takeing 
         return;
     }
 
-    if(str[i] == target){
+    if(str[i] == target){   
         ans = i;
     }
 
