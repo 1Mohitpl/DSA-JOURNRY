@@ -1,45 +1,77 @@
+//reverse the string using recurrsion
+
 #include<iostream>
-#include<vector>
 using namespace std;
 
+void reverse(string&s, int p1, int p2){
+      
+      //base case
+      if (p1>= p2)
+      {
+         return;
+      }
 
-  void solve(int arr[], int size , int index, vector<int>&anseven, vector<int>&ansOdd){
-
-    if(index >= size){
-        return;
-    }
-
-     if(arr[index] %2==0){
-        anseven.push_back(arr[index]);
-     }
-     if(arr[index]%2==1){
-        ansOdd.push_back(arr[index]);
-     }
-
-     solve(arr, size, index+1, anseven, ansOdd);
-
-  }
-int main (){
-    int arr[] = {10, 2, 15, 20,29,27};
-    int size = 6;
-    int index = 0;
-    
-    vector<int>anseven;
-    vector<int>ansOdd;
-
-    solve(arr, size, index, anseven, ansOdd);
-
-    // print ans using foreach loop
-
-    for(int num: anseven ){
-        cout << "Even numbers : " << num << " ";
-    }
-     cout << endl;
-   for(int num : ansOdd){
-    cout << "Odd Numbers :" << num << " ";
-   }
+      swap(s[p1], s[p2]);
+      reverse(s, p1+1, p2-1);
+      
 
 }
+
+int main(){
+
+   string s;
+   cout << "Enter an string :" << endl;
+   cin >> s;
+   reverse(s, 0 , s.size()-1);
+   cout << s << endl;
+}
+
+
+
+
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+
+//   void solve(int arr[], int size , int index, vector<int>&anseven, vector<int>&ansOdd){
+
+//     if(index >= size){
+//         return;
+//     }
+
+//      if(arr[index] %2==0){
+//         anseven.push_back(arr[index]);
+//      }
+//      if(arr[index]%2==1){
+//         ansOdd.push_back(arr[index]);
+//      }
+
+//      solve(arr, size, index+1, anseven, ansOdd);
+
+//   }
+// int main (){
+//     int arr[] = {10, 2, 15, 20,29,27};
+//     int size = 6;
+//     int index = 0;
+    
+//     vector<int>anseven;
+//     vector<int>ansOdd;
+
+//     solve(arr, size, index, anseven, ansOdd);
+
+//     // print ans using foreach loop
+
+//     for(int num: anseven ){
+//         cout << "Even numbers : " << num << " ";
+//     }
+//      cout << endl;
+//    for(int num : ansOdd){
+//     cout << "Odd Numbers :" << num << " ";
+//    }
+
+// }
 
 
 
