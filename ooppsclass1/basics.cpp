@@ -107,11 +107,13 @@ int main()
     // cout << sizeof(Student) << endl;
     // Student s1;
 
+    {
     Student s2(1, 12, 1, "Chota Bheem", 1, "Chutki");
-    Student s1 = s2;     // deep copy here
-
-    cout << s1.name << endl;
-    cout << s2.name << endl;
+    // Student s1 = s2;     // deep copy here
+}   
+Student s1;
+    // cout << s1.name << endl;
+    // cout << s2.name << endl;
 
     // Student s3(2, 15, 0, "Lokesh", 5);
     // cout << s3.name << endl;
