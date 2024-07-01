@@ -20,16 +20,17 @@ class Node{
     
 };
 
- void print (Node* head){
+ int print (Node* head){
    Node* temp = head;         // create anoter temporary pointer 
-
+  int count = 0;
    while (temp!= NULL)
    {
-       cout << temp->data << endl;     // print  the data 
+         count ++;
+       cout << temp->data << " ";     // print  the data 
        temp = temp->next;              // pointing to the next pointer
    }
-   
-           
+     cout << "total number of nodes :"<< count << endl;
+  cout << endl;
 }
 
 
@@ -51,4 +52,5 @@ int main () {
   
   Node* head = first;
   print(head);
+  
 }
