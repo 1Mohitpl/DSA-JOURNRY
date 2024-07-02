@@ -2,6 +2,10 @@
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "bitset": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "type_traits": "cpp"
     }
 }

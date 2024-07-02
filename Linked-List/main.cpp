@@ -34,6 +34,10 @@ class Node{
 }
 
 
+void insterAHead(Node* head, int data){
+   Node* newnode = new Node(data);
+}
+
 int main () {
    Node*next; 
 
