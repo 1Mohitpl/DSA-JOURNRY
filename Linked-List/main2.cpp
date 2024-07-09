@@ -32,6 +32,19 @@ class Node{
 
     }
 
+    int getlenght(Node* head) {
+        Node* temp = head;
+        int count = 0;
+        while (temp != NULL)
+        {
+             count ++;
+             temp = temp ->pointer;
+        }
+
+        return count;
+        
+    }
+
 int main (){
     //creation of node
     //  Node a;    // static allocation 
@@ -55,5 +68,5 @@ int main (){
 
     Node* head  = head1;
     printall(head);
-
+   cout << "lenght" << getlenght(head);
 }
