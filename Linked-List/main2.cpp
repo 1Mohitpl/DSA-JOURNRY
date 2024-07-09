@@ -45,6 +45,13 @@ class Node{
         
     }
 
+    void insertAthead(Node* &head, int val){
+
+        Node* temp = new Node(val);
+        temp->pointer = head;
+        head = temp;
+    }
+
 int main (){
     //creation of node
     //  Node a;    // static allocation 
@@ -67,6 +74,10 @@ int main (){
     head8->pointer = NULL;       // creation of linked  list 
 
     Node* head  = head1;
-    printall(head);
-   cout << "lenght" << getlenght(head);
+  
+
+
+   insertAthead(head, 300);
+     printall(head);
+        cout << "lenght" << getlenght(head);
 }
