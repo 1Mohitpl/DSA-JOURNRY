@@ -34,8 +34,11 @@ class Node{
 }
 
 
-void insterAHead(Node* head, int data){
-   Node* newnode = new Node(data);
+void insterAHead(Node* &head, int data){
+   Node* temp = new Node(data);   // create another node 
+   temp->next = head;
+   head = temp;
+
 }
 
 int main () {
@@ -55,6 +58,10 @@ int main () {
    fourth->next= fifth;
   
   Node* head = first;
+//   print(head);
+
+  insterAHead(head, 200);
   print(head);
+ 
   
 }
