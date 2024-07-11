@@ -45,13 +45,14 @@ class Node{
         
     }
 
-    void insertAthead(Node* &head, int val){
+    void insertAthead(Node* &head, Node* &tail, int val){
         if(head == NULL){
             // ceate an new node
             Node* newnode = new Node(val);
             //  updating head 
 
             head = newnode;
+            tail = newnode;
         } else{
             Node* temp = new Node(val);
         temp->pointer = head;
@@ -62,11 +63,12 @@ class Node{
         
     }
 
-    void insertedAttail(Node* head, Node* tail, int val){
+    void insertedAttail(Node* &head, Node* &tail, int val){
         if(head == NULL){
             // create an node
             Node* newnode = new Node(val);
             head= newnode;
+            tail = newnode;
         } else{
             Node* newnode = new Node(val);
             tail->pointer = newnode;
@@ -77,30 +79,36 @@ class Node{
 int main (){
     //creation of node
     //  Node a;    // static allocation 
-    Node* head1 = new Node(10);    // dynamically creation of an node
-    Node* head2 = new Node(20);  
-    Node* head3 = new Node(30);  
-    Node* head4 = new Node(40);  
-    Node* head5 = new Node(50);  
-    Node* head6 = new Node(60);  
-    Node* head7 = new Node(70);  
-    Node* head8 = new Node(80);  
+    // Node* head1 = new Node(10);    // dynamically creation of an node
+    // Node* head2 = new Node(20);  
+    // Node* head3 = new Node(30);  
+    // Node* head4 = new Node(40);  
+    // Node* head5 = new Node(50);  
+    // Node* head6 = new Node(60);  
+    // Node* head7 = new Node(70);  
+    // Node* head8 = new Node(80);  
 
-    head1->pointer = head2;
-    head2->pointer = head3;
-    head3->pointer = head4;
-    head4->pointer = head5;
-    head5->pointer = head6;
-    head6->pointer = head7;
-    head7->pointer = head8;
-    head8->pointer = NULL;       // creation of linked  list 
+    // head1->pointer = head2;
+    // head2->pointer = head3;
+    // head3->pointer = head4;
+    // head4->pointer = head5;
+    // head5->pointer = head6;
+    // head6->pointer = head7;
+    // head7->pointer = head8;
+    // head8->pointer = NULL;       // creation of linked  list 
 
-    Node* head  = head1;
-    Node* tail = head8;
+    Node* head  = NULL;
+    Node* tail = NULL;
   
 
 
-   insertAthead(head, 300);
+    insertAthead(head, tail, 10);
+    insertAthead(head,tail, 20);
+    insertAthead(head,tail, 30);
+    insertAthead(head,tail, 40);
+    insertAthead(head,tail,50);
+    insertAthead(head,tail, 60);
+
    insertedAttail(head, tail, 400);
      printall(head);
         cout << "lenght" << getlenght(head);
