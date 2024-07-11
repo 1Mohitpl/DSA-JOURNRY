@@ -74,6 +74,15 @@ void deleteNode(Node*& head, Node*& tail, int position) {
         return;
     }
 
+    if(head== tail){
+        // single element
+        Node* temp = head;
+        delete temp;
+        head =  NULL;
+        tail = NULL;
+        return;
+    }
+
     int len = getLength(head);
 
     if (position == 1) {
