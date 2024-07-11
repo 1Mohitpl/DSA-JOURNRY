@@ -76,6 +76,17 @@ class Node{
         }
     }
 
+    void createTail(Node* &head, Node* &tail, int val){
+        // create an temp pointer
+
+        Node* temp = head;
+        while(temp ->pointer != NULL){
+            temp =  temp->pointer;
+        }
+
+        tail = temp;
+    }
+
 int main (){
     //creation of node
     //  Node a;    // static allocation 
