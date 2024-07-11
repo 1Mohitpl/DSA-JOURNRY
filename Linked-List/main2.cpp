@@ -46,10 +46,20 @@ class Node{
     }
 
     void insertAthead(Node* &head, int val){
+        if(head == NULL){
+            // ceate an new node
+            Node* newnode = new Node(data);
+            //  updating head 
 
-        Node* temp = new Node(val);
+            head = newnode;
+        } else{
+            Node* temp = new Node(val);
         temp->pointer = head;
         head = temp;
+
+        }
+
+        
     }
 
 int main (){
