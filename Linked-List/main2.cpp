@@ -48,7 +48,7 @@ class Node{
     void insertAthead(Node* &head, int val){
         if(head == NULL){
             // ceate an new node
-            Node* newnode = new Node(data);
+            Node* newnode = new Node(val);
             //  updating head 
 
             head = newnode;
@@ -60,6 +60,18 @@ class Node{
         }
 
         
+    }
+
+    void insertedAttail(Node* head, Node* tail, int val){
+        if(head == NULL){
+            // create an node
+            Node* newnode = new Node(val);
+            head= newnode;
+        } else{
+            Node* newnode = new Node(val);
+            tail->pointer = newnode;
+            tail = newnode;
+        }
     }
 
 int main (){
@@ -84,10 +96,12 @@ int main (){
     head8->pointer = NULL;       // creation of linked  list 
 
     Node* head  = head1;
+    Node* tail = head8;
   
 
 
    insertAthead(head, 300);
+   insertedAttail(head, tail, 400);
      printall(head);
         cout << "lenght" << getlenght(head);
 }
