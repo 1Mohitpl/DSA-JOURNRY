@@ -76,6 +76,42 @@ void insertAthead (Node* &head, Node* &tail, int data){
     
  
  }
+
+ void insertAtPosition(Node* &head, Node* &tail, int data, int pos){
+    if(head == NULL){
+        Node* newnode = head;
+        head = newnode;
+        tail = newnode;
+    } else{
+        // non empty
+        int len = getLength(head);
+        if (pos == 1)
+        {
+           insertAthead(head, tail, data);
+        } else if (pos == len+1){
+             insertAttail(head, tail, data);
+        } else{
+            // middle insert
+            //step1: create an node
+            Node* newnode = new Node(data);
+            // set two pinters 
+            Node* prevnode = NULL;
+            Node* currnode = head;
+            while(pos != 1){
+                pos--;
+                prevnode  = currnode;
+                currnode = currnode->next;
+            }
+            // update the pointers 
+            prevnode->next = newnode;
+            newnode->prev = prevnode;
+            newnode->next = currnode;
+            currnode->prev = newnode;
+        }
+        
+        
+    }
+ }
 int main () {
 
     Node* head = NULL;
@@ -89,7 +125,8 @@ int main () {
     insertAthead(head, tail, 10);
     printall(head);
 
-    insertAttail(head, tail, 200);
+    // insertAttail(head, tail, 200);
+    insertAtPosition(head, tail, 300, 4);
     printall(head);
 
 }
