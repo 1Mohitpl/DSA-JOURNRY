@@ -112,21 +112,57 @@ void insertAthead (Node* &head, Node* &tail, int data){
         
     }
  }
+
+
+ void reverse(Node* &head){
+    Node* prev = NULL;
+    Node* curr = head;
+
+    while(curr != NULL){
+        Node* nextnode = head->next;
+        prev = curr;
+        curr = nextnode;
+
+    }
+    return prev;
+ }
+   void addone(Node* head){
+      // reverse
+       head = reverse(head);
+       int carry = 1;
+       Node* temp = head;
+       while(head != NULL){
+        int totalsum = temp->data +carry;
+        int digit = totalsum % 10;
+        carry = totalsum / 10;
+
+        temp->data = digit;
+        temp = temp->next;
+       }
+
+      //add1
+      //reverse
+   }
+
+
+
+
+
 int main () {
 
     Node* head = NULL;
     Node* tail = NULL;
-    insertAthead(head, tail, 70);
-    insertAthead(head, tail, 60);
-    insertAthead(head, tail, 50);
-    insertAthead(head, tail, 40);
-    insertAthead(head, tail, 30);
-    insertAthead(head, tail, 20);
-    insertAthead(head, tail, 10);
+    insertAthead(head, tail, 3);
+    insertAthead(head, tail, 3);
+    insertAthead(head, tail, 1);
+    // insertAthead(head, tail, 40);
+    // insertAthead(head, tail, 30);
+    // insertAthead(head, tail, 20);
+    // insertAthead(head, tail, 10);
     printall(head);
 
     // insertAttail(head, tail, 200);
-    insertAtPosition(head, tail, 300, 4);
-    printall(head);
+    // insertAtPosition(head, tail, 300, 4);
+    // printall(head);
 
 }
