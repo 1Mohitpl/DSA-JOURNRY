@@ -114,43 +114,53 @@ void insertAthead (Node* &head, Node* &tail, int data){
  }
 
 
-Node* reverse(Node* &head) {
+ Node* reverse(Node* &head){
     Node* prev = NULL;
     Node* curr = head;
-    Node* nextnode = NULL;
-    
-    while (curr != NULL) {
-        nextnode = curr->next;
-        curr->next = prev;
+
+    while(curr != NULL){
+        Node* nextnode = curr->next;
         prev = curr;
         curr = nextnode;
+
     }
     return prev;
-}
-
-void addone(Node* &head) {
-    // Reverse the linked list
-    head = reverse(head);
-
-    int carry = 1;
-    Node* temp = head;
-    
-    while (temp != NULL) {
-        int totalsum = temp->data + carry;
-        temp->data = totalsum % 10;
+ }
+   void addone(Node* &head){
+      // reverse
+       head = reverse(head);
+       int carry = 1;
+       Node* temp = head;
+       while(temp->next != NULL){
+        int totalsum = temp->data +carry;
+        int digit = totalsum % 10;
         carry = totalsum / 10;
-        
-        if (temp->next == NULL && carry > 0) {
-            temp->next = new Node(carry);
-            carry = 0;
-        }
-        
+
+        temp->data = digit;
         temp = temp->next;
-    }
+        if(carry == 0){
+            break;
+        }
+       }
+     //process last date
+     if(carry != 0){
+        int totalsum = temp->data + carry;
+        int digit = totalsum % 10;
+        carry = totalsum / 10;
+
+        temp->data = digit;
+        if(carry!=0){
+            Node* newnode = new Node(carry);
+            temp->next = newnode;
+        }
+     }
+
     
-    // Reverse the linked list again to restore the original order
-    head = reverse(head);
-}
+      //reverse
+      head = reverse(head);
+   }
+
+
 
 
 
@@ -165,10 +175,10 @@ int main () {
     // insertAthead(head, tail, 30);
     // insertAthead(head, tail, 20);
     // insertAthead(head, tail, 10);
-    printall(head);
+    // printall(head);
     addone(head);
     printall(head);
-
+    cout << endl;
 
     // insertAttail(head, tail, 200);
     // insertAtPosition(head, tail, 300, 4);
