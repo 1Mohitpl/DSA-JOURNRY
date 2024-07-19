@@ -59,27 +59,111 @@ void reverseFirstK(queue<int> &q, int k){
     
 }
 
+void interleavequeue(queue<int> &first){
+    // push first half of first queue in second queue
+    queue<int>second;
+    int size = first.size();
+    for (int i = 0; i < size/2; i++)
+    {
+       int temp = first.front();
+        first.pop();
+        second.push(temp);
+    }
+
+
+    // merge both the half
+for (int i = 0; i < size/2; i++)
+{        
+     int temp = second.front();
+     second.pop();
+     first.push(temp);
+
+    temp = first.front();
+    first.pop();
+    first.push(temp);
+    
+}
+    
+    
+}
+
+void printfirstnegativenumber(int *arr, int n, int k){
+    // procees the first window
+    deque<int>dq;
+    for (int i = 0; i < k; i++)
+    { 
+        
+        int element = arr[i];  // store ans;
+        if (element <0)    // check if the nuber is negetive or not
+        {
+            dq.push_back(i);  // if negetiev then store index of that element;
+        }
+        
+    }
+
+    //process remaining window -> removeal, addition 
+
+    for (int i = k; i < n; i++)
+    {
+        if (dq.empty())
+        {
+            cout << "0" << endl;
+        } else{
+            cout << arr[dq.front()] << " ";
+        }
+         //removal 
+         if (i- dq.front() >= k)
+         {
+            dq.pop_front();
+         }
+
+         // addition
+         if (arr[i] < 0)
+         {
+            dq.push_back(i);
+         }
+
+
+         
+    }
+    
+         if (dq.empty())
+        {
+            cout << "0" << endl;
+        } else{
+            cout << arr[dq.front()] << " ";
+        }
+    
+}
+
+
+
 
 int main () {
-    queue<int> q;
-    q.push(10);
-    q.push(20);
-    q.push(30);
-    q.push(40);
-    q.push(50);
-    q.push(60); 
-    q.push(70);
+    // queue<int> q;
+    // q.push(10);
+    // q.push(20);
+    // q.push(30);
+    // q.push(40);
+    // q.push(50);
+    // q.push(60); 
+
+    int arr[] = {2, -5, 4, -1, -2, 0, 5};
+    int size = 7;
+    int k = 3;
+    printfirstnegativenumber(arr,size, k);
     
 
     // reversequeue(q);
     
-  reverseFirstK(q, 4);
+//   reverseFirstK(q, 4);
+// interleavequeue(q);
 
-    while(!q.empty()){
-        int ans = q.front();
-        q.pop();
-        cout << ans << " ";
-    }
+//     while(!q.empty()){
+//         int ans = q.front();
+//         q.pop();
+//         cout << ans << " ";
+//     }
 
     return 0;
 
