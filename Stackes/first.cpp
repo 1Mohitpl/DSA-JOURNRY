@@ -1,5 +1,116 @@
 #include<iostream>
 #include<stack>
+using namespace std;
+
+class stack{
+     public:
+     int *arr;
+     int size;
+     int top;
+
+     // constarctor 
+
+     stack(int size){
+       arr = new int[size];
+       this->size = size;
+       this->top = -1;
+     }
+
+     void push(int data){
+          if (top == size-1 )
+          {
+               cout << "stack is overflow" << endl;
+               return;
+          } else{
+               top ++;
+               arr[top] = data;
+          }
+          
+     }
+     void pop(){
+          if (top == -1)
+          {
+             cout << "stack is underflow" << endl;
+             return;
+          } else {
+               top--;
+          }
+          
+     }
+     bool isempty() {
+          if (top == -1)
+          {
+               cout << "stack is empty" << endl;
+               return true;
+          } else{
+            return false;
+          }
+          
+     }
+
+     int getTop(){
+          if (top == -1)
+          {
+               cout << "stack is empty" << endl;
+          } else{
+               return arr[top];
+          }
+          
+     }
+     void print (){
+          cout << "stack : ";
+          for(int i= 0; i<size-1; i++){
+               cout << arr[i] << " ";
+          } cout << endl;
+     }
+};
+
+int main () {
+     stack
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+#include<stack>
 using  namespace std;
 
 
