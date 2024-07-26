@@ -1,3 +1,6 @@
+// find the middle element of the stack 
+
+
 #include<iostream>
 #include<stack>
 using namespace std;
