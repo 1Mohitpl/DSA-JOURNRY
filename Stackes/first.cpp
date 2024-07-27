@@ -1,54 +1,54 @@
-// find the middle element of the stack 
+// // find the middle element of the stack 
 
 
-#include<iostream>
-#include<stack>
-using namespace std;
+// #include<iostream>
+// #include<stack>
+// using namespace std;
 
 
-void solve(stack<int> &st, int &pos, int &ans){
-     //base case
-     if (pos == 1)
-     {
-          ans = st.top();
-          return ;
-     }
-     // 1 case solve left recurrsion will solve 
-     pos --;
-     int temp = st.top(); 
-     st.pop();
+// void solve(stack<int> &st, int &pos, int &ans){
+//      //base case
+//      if (pos == 1)
+//      {
+//           ans = st.top();
+//           return ;
+//      }
+//      // 1 case solve left recurrsion will solve 
+//      pos --;
+//      int temp = st.top(); 
+//      st.pop();
 
-     //recurrsion 
-     solve(st, pos, ans );
+//      //recurrsion 
+//      solve(st, pos, ans );
 
-     //backtracing
+//      //backtracing
 
-     st.push(temp);
+//      st.push(temp);
      
-}
+// }
 
-int getMiddleElement(stack<int>&st){
-     int size = st.size();
+// int getMiddleElement(stack<int>&st){
+//      int size = st.size();
 
-     if (st.empty())
-     {
-          return -1;
-     } else{
-          int pos = 0;
-          //odd
-          if(size & 1){
-               pos = size/2 +1;
-          } else{
-               //even 
-               pos = size/2;
+//      if (st.empty())
+//      {
+//           return -1;
+//      } else{
+//           int pos = 0;
+//           //odd
+//           if(size & 1){
+//                pos = size/2 +1;
+//           } else{
+//                //even 
+//                pos = size/2;
 
-          }
-          int ans = -1;
-          solve(st, pos, ans);
-          return ans;
-     }
+//           }
+//           int ans = -1;
+//           solve(st, pos, ans);
+//           return ans;
+//      }
      
-}
+// }
 
 
 
@@ -56,15 +56,15 @@ int getMiddleElement(stack<int>&st){
 
 
 
-int main(){
-     stack<int> st;
-     st.push(10);
-     st.push(20);
+// int main(){
+//      stack<int> st;
+//      st.push(10);
+//      st.push(20);
     
 
-     int mid = getMiddleElement(st);
-     cout << "middle element :" << mid << endl;
-}
+//      int mid = getMiddleElement(st);
+//      cout << "middle element :" << mid << endl;
+// }
 
 
 
@@ -87,28 +87,28 @@ int main(){
 
 // reverse the string;
 
-// #include<iostream>
-// #include<stack>
-// using namespace std;
+#include<iostream>
+#include<stack>
+using namespace std;
 
-// int main () {
-//      string str  = "10223";
-//      stack<int>st;
+int main () {
+     string str  = "mohit is the";
+     stack<char>st;
 
-//      for (int i = 0; i < str.length(); i++)
-//      {
-//           int val = str[i] - '0'; // store each element of string in variable ch
-//           st.push(val);  // now push into the stack
-//      }
+     for (int i = 0; i < str.length(); i++)
+     {
+          char ch = str[i]; // store each element of string in variable ch
+          st.push(ch);  // now push into the stack
+     }
 
-//      while (!st.empty())
-//      {
-//            cout << st.top() << " ";
-//            st.pop();
-//      }
-//      cout << endl;
-//      return 0;
-// }
+     while (!st.empty())
+     {
+           cout << st.top() << " ";
+           st.pop();
+     }
+     cout << endl;
+     return 0;
+}
 
 
 

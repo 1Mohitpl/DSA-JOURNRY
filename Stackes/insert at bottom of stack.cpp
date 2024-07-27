@@ -34,9 +34,31 @@ void reverse(stack<int> &st){
     insertElement(st, temp);
 }
 
+void insertsorted(stack<int> &st, int element){
+    if (st.empty() || element > st.top())
+    {
+        st.push(element);
+        return;
+    }
+    if (element<st.top()){
+    
+        int temp = st.top();
+        st.pop();
+   
+    
+    insertsorted(st, element);
+
+    // backtracking
+
+    st.push(temp);
+    }
+
+}
+
 int main (){
     stack<int>st;
-    int element = 400;
+    // int element = 400;
+    int element = 25;
     st.push(10);
     st.push(20);
     st.push(30);
@@ -44,14 +66,14 @@ int main (){
     st.push(50);
 
     // insertElement(st, element);
-
-    reverse(st);
+     insertsorted(st, element);
+    // reverse(st);
 
     while (!st.empty())
     {
-        cout << st.top() << endl;
+        cout << st.top() << " ";
         st.pop();
     }
-    
+    cout << endl;
 
 }
