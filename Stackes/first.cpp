@@ -87,159 +87,159 @@
 
 // reverse the string;
 
-#include<iostream>
-#include<stack>
-using namespace std;
-
-int main () {
-     string str  = "mohit is the";
-     stack<char>st;
-
-     for (int i = 0; i < str.length(); i++)
-     {
-          char ch = str[i]; // store each element of string in variable ch
-          st.push(ch);  // now push into the stack
-     }
-
-     while (!st.empty())
-     {
-           cout << st.top() << " ";
-           st.pop();
-     }
-     cout << endl;
-     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // #include<iostream>
+// #include<stack>
 // using namespace std;
 
-//  class stack {
-//     public :
+// int main () {
+//      string str  = "mohit is the";
+//      stack<char>st;
+
+//      for (int i = 0; i < str.length(); i++)
+//      {
+//           char ch = str[i]; // store each element of string in variable ch
+//           st.push(ch);  // now push into the stack
+//      }
+
+//      while (!st.empty())
+//      {
+//            cout << st.top() << " ";
+//            st.pop();
+//      }
+//      cout << endl;
+//      return 0;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<iostream>
+using namespace std;
+
+ class stack {
+    public :
      
-//       int *arr;
-//       int size ;
-//       int top; 
+      int *arr;
+      int size ;
+      int top; 
 
 
-//       stack (int size) {
-//            arr = new int [size];
-//            this->size = size;
-//            this->top = -1;
+      stack (int size) {
+           arr = new int [size];
+           this->size = size;
+           this->top = -1;
              
-//       }
+      }
 
-//       void push (int data) {
-//         if ( top == size -1) {
+      void push (int data) {
+        if ( top == size -1) {
 
-//           cout << "stack is overflow" << endl;
-//           return;
+          cout << "stack is overflow" << endl;
+          return;
 
-//         }
-//         else {
-//              top ++ ;
-//           arr [top] = data; 
-//         }
+        }
+        else {
+             top ++ ;
+          arr [top] = data; 
+        }
         
-//       }
+      }
 
-//       void pop () {
-//          if (top == -1) {
+      void pop () {
+         if (top == -1) {
 
-//            cout << "stack is underflow" << endl;
-//            return;
+           cout << "stack is underflow" << endl;
+           return;
 
-//          }
-//          else{
+         }
+         else{
              
-//              top --;
-//          }
+             top --;
+         }
          
-//       }
+      }
 
-//       bool isempty () {
-//           if (top == -1) {
-//                return true;
-//           }
-//           else {
-//                 return false;
-//           }
-//       }
+      bool isempty () {
+          if (top == -1) {
+               return true;
+          }
+          else {
+                return false;
+          }
+      }
 
-//       int getTop () {
+      int getTop () {
 
-//           if (top == -1 ) {
+          if (top == -1 ) {
 
-//                cout << "stack is empty" << endl;
-//                return -1;
-//           } 
-//           else{
+               cout << "stack is empty" << endl;
+               return -1;
+          } 
+          else{
                 
-//                   return arr [top] ;
+                  return arr [top] ;
 
-//           }
+          }
           
 
-//       }
+      }
 
-//        int getSize () {
+       int getSize () {
          
-//            return top +1;
-//        }
+           return top +1;
+       }
 
-//        void print () {
-//         cout <<"Top" << top << endl;
-//         cout << "Top element :" << getTop() << endl;
-//         cout << "stack :" ;
+       void print () {
+        cout <<"Top" << top << endl;
+        cout << "Top element :" << getTop() << endl;
+        cout << "stack :" ;
 
-//         for (int i = 0; i < getSize (); i++)
-//         {
-//            cout << arr[i]  << "  " << endl;
-//         }
-//          cout << endl << endl;
-//        }
-//  };
+        for (int i = 0; i < getSize (); i++)
+        {
+           cout << arr[i]  << "  " << endl;
+        }
+         cout << endl << endl;
+       }
+ };
 
-// int main () {
+int main () {
   
-//   stack st (8) ;   // stack creation
+  stack st (8) ;   // stack creation
 
-//   st.push (23);
-//   st.print();
+  st.push (23);
+  st.print();
 
-//   st.push(39);
-//   st.print();
+  st.push(39);
+  st.print();
 
 
-//   st.push(40);
-//   st.print();
+  st.push(40);
+  st.print();
 
-//  st.pop();
-//  st.print();
-// }
+ st.pop();
+ st.print();
+}
 
 
 
