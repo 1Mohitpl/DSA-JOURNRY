@@ -193,3 +193,32 @@ int main()
     int ans = sumofnumbers(n);
     cout << "sum of all numbers upto N : " << ans << endl;
 }
+
+
+
+
+//sum of all odd number in an array 
+
+#include<iostream>
+using namespace std;
+
+int sumofOddNumber(int arry[], int size){
+   int sum = 0;
+   for (int i = 0; i < size; i++)
+   {
+      if (arry[i] % 2 == 1)
+      {
+         sum += arry[i];
+      }
+      
+   }
+   return sum;
+}
+
+int main (){
+   int arry[] = {1,2,3,4,6,5,7,9,11};
+   int size = 9;
+
+   int ans = sumofOddNumber(arry, size);
+   cout << "sum of odd numbers in array : " << ans << endl;
+}
