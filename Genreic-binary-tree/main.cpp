@@ -84,15 +84,20 @@ void levelorderTreversal(Node* root){
     //base case 
     queue<Node*>q;
     q.push(root);
+    q.push(NULL);
 
 
     // Now traverse the  tree
-    while (!q.empty())
+    while (q.size() > 1)
     {
         Node* front = q.front();
         q.pop();
-
-        cout << front->data << endl;
+        
+        if(front == NULL){
+            cout << endl;
+            q.push(NULL);
+        } else{
+            cout << front->data << " ";
 
         if(front->left != NULL){
             q.push(front->left);
@@ -101,10 +106,13 @@ void levelorderTreversal(Node* root){
         if(front->right != NULL){
             q.push(front->right);
         }
+
+        }
+
+        
     }
     
 }
-
 int main () {
 
   Node* root  = createTree();
