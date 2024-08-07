@@ -67,10 +67,53 @@ void postorder(Node* root) {
     cout << root->data <<endl;
 }
 
+void levelorderTraversal(Node* root) {
+    // first yop have to create a tree
+    queue<Node*> qe;
+    if(root !=NULL){
+     qe.push(root);
+     q.pus(NULL);
+    }
 
+    while(q.size() >1){
+        Node* front = qe.front();
+        qe.pop();
+
+        if(front == NULL){
+            cout << endl;
+            q.push(NULL);
+        } else{
+            cout << front->data << endl;
+        if(front->left != NULL){
+            q.push(front->left);
+        }
+
+        if(front->right != NULL){
+            q.push(front->right);
+        }
+     }
+    }
+}
+
+  void printlevelView(Node* root, int level, vector<int>& leftview){
+      if(root == NULL){
+        return;
+      }
+    if(level == leftview.size()){
+        // that means i got leftvew element and store it
+
+      leftview.push_back(root->data);
+
+    }
+
+    printlevelView(root->left, level+1, leftview);
+    printlevelView(root->right, level+1, leftview);
+    
+
+  }
 
 
 int main (){
-
-
+   
+   
 }
