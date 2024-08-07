@@ -19,4 +19,4 @@ void solve(TreeNode* root, int targetSum, int sum, vector<int>& result, vector<v
         vector<int>result;
         solve(root, targetSum, sum, result, ans);
         return ans;
-    }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

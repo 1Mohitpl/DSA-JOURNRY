@@ -68,9 +68,32 @@ void inorderTraversal(Node* root){
     inorderTraversal(root->right);
 }
 
+int searchInorder(int inorder[], int size, int target){
+    for (int i = 0; i < size; i++)
+    {
+        if(inorder == target){
+            return i;
+        }
+    }
 
-Node* constructTreefromPreAndInorderTraversal(int preorder[], int inorder[], int preIndex, int inorderstart, int inorderEnd, int size ){
-      if(preIndex>= size || int inorderstart)
+    return -1;
+    
+}
+
+Node* constructTreefromPreAndInorderTraversal(int preorder[], int inorder[], int &preorderIndex , int inorderstart, int inorderEnd, int size ){
+      if(preorderIndex >= size || inorderstart > inorderEnd){
+        return NULL;
+      }
+
+      // 1 case solve 
+      int element = preorder[preorderIndex];
+      preorderIndex++;
+
+      Node* root = new Node (element);
+
+      // now searching element from Inorder
+      int postion = searchInorder(inorder, size, element);
+
        
 }
 
