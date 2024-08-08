@@ -185,11 +185,79 @@ void printBottomView(Node* root) {
 
     cout << endl;
 }
+
+
+void leftboundary(Node* root){
+     if(root == NULL){
+        return;
+     }
+
+     if(root->left == NULL && root->right == NULL){
+        return;
+     }
+       cout << root->data << " ";
+     if(root->left != NULL){
+        leftboundary(root->left);
+     } else{
+        leftboundary(root->right);
+     }
+}
+    
+    void printleafNode(Node* root){
+        if(root == NULL){
+            return;
+        }
+         // printleaf nodes
+        if(root->left == NULL && root->right == NULL){
+            cout << root->data << " ";
+        }
+        printleafNode(root->left);
+        printleafNode(root->right);
+
+    }
+
+
+void rightboundary(Node* root){
+     if(root == NULL){
+        return ;
+     }
+
+     if(root->left == NULL && root->right == NULL){
+        return;
+     }
+      
+     if(root->right != NULL){
+        rightboundary(root->right);
+     } else{
+         rightboundary(root->left);
+     }
+
+      cout << root->data << " ";
+}
+
+
+void boundaryTraversal(Node* root){
+    if(root == NULL){
+        return;
+    }
+  cout << root->data << " ";
+    leftboundary(root->left);
+    printleafNode(root->left);
+    printleafNode(root->right);
+    rightboundary(root->right);
+    
+
+   
+
+}
+
+
 int main (){
     Node* root = createTree();
-    levelorderTreversal(root);
-      printTopview(root);
-   printBottomView(root);
+//     levelorderTreversal(root);
+//       printTopview(root);
+//    printBottomView(root);
+      boundaryTraversal(root);
 
     return 0;
    
