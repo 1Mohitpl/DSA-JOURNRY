@@ -77,6 +77,65 @@ void levelOrderTraversal(Node* root){
    }
 }
 
+void preOrder(Node* root){
+  if(root == NULL){
+    return;
+  }
+
+  cout << root->data << " ";
+  preOrder(root->left);
+  preOrder(root->right);
+}
+
+void inOrder(Node* root){
+  if(root == NULL){
+    return;
+  }
+  
+  preOrder(root->left);
+  cout << root->data << " ";
+  preOrder(root->right);
+}
+
+void postOrder(Node* root){
+   if(root == NULL){
+    return;
+   }
+  
+  postOrder(root->left);
+  postOrder(root->right);
+  cout << root->data << " ";
+}
+
+Node* minValue(Node* root){
+  if(root == NULL){
+    return NULL;
+  }
+    Node* temp = root;
+   while (root->left != NULL)
+   {
+       temp = temp->left;
+   }
+
+   return temp;
+   
+}
+
+Node* maxValue(Node* root){
+  if(root == NULL){
+     return NULL;
+  }
+   Node* temp = root;
+    while (temp->right != NULL)
+    {
+      temp = temp->right;
+    }
+    
+   return temp;
+
+}
+
+
 
 int main(){
           
