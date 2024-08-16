@@ -156,6 +156,57 @@ bool searchInBST(Node* root, int target){
     return leftans || rightans;
 }
 
+Node* deletefromBST(Node* root, int target){
+      // findout target and delete it 
+      if(root == NULL)  {
+        return NULL;
+      }
+    // finding the target 
+    if(root->data == target){
+       //now delete the data
+       //DELETE LEAF NODES
+
+       if(root->left == NULL && root->right == NULL){
+              delete root;
+              return NULL;
+        }
+
+        if(root->left != NULL && root->right == NULL){
+               Node* chaildSubtree = root->left;
+               delete root;
+               return chaildSubtree;
+        }
+
+        if(root->left == NULL && root->right != NULL){
+           Node* chaildSubtree = root->right;
+           delete root;
+           return chaildSubtree;
+        }
+
+        // last case 
+        if(root->left != NULL && root->right != NULL){
+            // get the max value of left subtree
+              Node* maxval =  maxValue(root->left);
+              root->data = maxval->data;
+
+              // delete actual maxval node, 
+              root->left=deletefromBST(root->left, maxval->data); 
+              return root;
+              
+        }
+
+      
+
+}   
+
+    else if (target>root->data)
+    {
+        root->left=  deletefromBST(root->left , target);
+    } else{
+         root->right=  deletefromBST(root->right, target);
+    }
+     return root;
+}
 
 
 int main(){
@@ -163,6 +214,20 @@ int main(){
     Node* root = NULL;
     createBst(root);
     levelOrderTraversal(root);
+
+    int target;
+    cout << endl << "Emter an target Value : "<< endl;
+    cin >> target;
+
+    while(target != -1){
+      root = deletefromBST(root, target);
+      cout << endl << " printing levelOrder tarversal : " << endl;
+      levelOrderTraversal(root);
+
+      cout << endl << "Emter an target Value : "<< endl;
+    cin >> target;  
+
+    }
 
 
     return 0;
