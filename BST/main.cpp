@@ -135,6 +135,27 @@ Node* maxValue(Node* root){
 
 }
 
+bool searchInBST(Node* root, int target){
+     if(root == NULL){
+      return false;
+     }
+
+     bool leftans = false;
+     bool rightans = false;
+
+     if(root->data == target){
+      return true;
+     } else{
+          if(target > root->data){
+              rightans = searchInBST(root->right, target);
+          } else{
+              leftans = searchInBST(root->left, target);
+          }
+          
+     }
+    return leftans || rightans;
+}
+
 
 
 int main(){
