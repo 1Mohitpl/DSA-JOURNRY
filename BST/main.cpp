@@ -199,11 +199,11 @@ Node* deletefromBST(Node* root, int target){
 
 }   
 
-    else if (target>root->data)
+    else if (target> root->data)
     {
-        root->left=  deletefromBST(root->left , target);
+        root->right=  deletefromBST(root->right , target);
     } else{
-         root->right=  deletefromBST(root->right, target);
+         root->left=  deletefromBST(root->left, target);
     }
      return root;
 }
