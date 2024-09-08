@@ -8,7 +8,7 @@ solving daily daily leetcode problems helps me to strong my problem skills.
 
 I choose C++ to learn Data strcture and algorithms  
 ## 🚀 About Me
-I'm a full stack developer...
+I'm a full stack developer..
 
 
 ## Contributing
