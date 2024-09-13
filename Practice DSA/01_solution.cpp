@@ -1,198 +1,200 @@
-//reverse the string using recurrsion
+// //reverse the string using recurrsion
 
-#include<iostream>
-using namespace std;
+// #include<iostream>
+// #include<queue>
+// using namespace std;
 
-void reverse(string&s, int p1, int p2){
 
-      //base case
-      if (p1>= p2)
-      {
-         return;
-      }
+// void reverse(string&s, int p1, int p2){
 
-      swap(s[p1], s[p2]);
-      reverse(s, p1+1, p2-1);
+//       //base case
+//       if (p1>= p2)
+//       {
+//          return;
+//       }
 
-}
+//       swap(s[p1], s[p2]);
+//       reverse(s, p1+1, p2-1);
 
-int main(){
+// }
 
-   string s;
-   cout << "Enter an string :" << endl;
-   cin >> s;
-   reverse(s, 0 , s.size()-1);
-   cout << s << endl;
-}
+// int main(){
 
-#include<iostream>
-#include<vector>
-using namespace std;
+//    string s;
+//    cout << "Enter an string :" << endl;
+//    cin >> s;
+//    reverse(s, 0 , s.size()-1);
+//    cout << s << endl;
+// }
 
-  void solve(int arr[], int size , int index, vector<int>&anseven, vector<int>&ansOdd){
+// #include<iostream>
+// #include<vector>
+// using namespace std;
 
-    if(index >= size){
-        return;
-    }
+//   void solve(int arr[], int size , int index, vector<int>&anseven, vector<int>&ansOdd){
 
-     if(arr[index] %2==0){
-        anseven.push_back(arr[index]);
-     }
-     if(arr[index]%2==1){
-        ansOdd.push_back(arr[index]);
-     }
+//     if(index >= size){
+//         return;
+//     }
 
-     solve(arr, size, index+1, anseven, ansOdd);
+//      if(arr[index] %2==0){
+//         anseven.push_back(arr[index]);
+//      }
+//      if(arr[index]%2==1){
+//         ansOdd.push_back(arr[index]);
+//      }
 
-  }
-int main (){
-    int arr[] = {10, 2, 15, 20,29,27};
-    int size = 6;
-    int index = 0;
+//      solve(arr, size, index+1, anseven, ansOdd);
 
-    vector<int>anseven;
-    vector<int>ansOdd;
+//   }
+// int main (){
+//     int arr[] = {10, 2, 15, 20,29,27};
+//     int size = 6;
+//     int index = 0;
 
-    solve(arr, size, index, anseven, ansOdd);
+//     vector<int>anseven;
+//     vector<int>ansOdd;
 
-    // print ans using foreach loop
+//     solve(arr, size, index, anseven, ansOdd);
 
-    for(int num: anseven ){
-        cout << "Even numbers : " << num << " ";
-    }
-     cout << endl;
-   for(int num : ansOdd){
-    cout << "Odd Numbers :" << num << " ";
-   }
+//     // print ans using foreach loop
 
-}
+//     for(int num: anseven ){
+//         cout << "Even numbers : " << num << " ";
+//     }
+//      cout << endl;
+//    for(int num : ansOdd){
+//     cout << "Odd Numbers :" << num << " ";
+//    }
 
-#include <iostream>
+// }
 
-using namespace std;
+// #include <iostream>
 
-bool checkprimeornot(int n)
-{ // check the number is prime number or not a prime number
+// using namespace std;
 
-    if (n == 2)
-    {
-        return true;
-    }
+// bool checkprimeornot(int n)
+// { // check the number is prime number or not a prime number
 
-    if (n % 2 == 0)
-    {
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-}
+//     if (n == 2)
+//     {
+//         return true;
+//     }
 
-int main()
-{
+//     if (n % 2 == 0)
+//     {
+//         return false;
+//     }
+//     else
+//     {
+//         return true;
+//     }
+// }
 
-    int n;
-    cout << "Enter a number here : " << endl;
-    cin >> n;
-    bool ans = checkprimeornot(n);
+// int main()
+// {
 
-    if (ans == 0)
-    {
-        cout << "Not a Prime nuber" << endl;
-    }
-    else
-    {
-        cout << "prime number" << endl;
-    }
-}
+//     int n;
+//     cout << "Enter a number here : " << endl;
+//     cin >> n;
+//     bool ans = checkprimeornot(n);
 
-#include <iostream>
-using namespace std;
+//     if (ans == 0)
+//     {
+//         cout << "Not a Prime nuber" << endl;
+//     }
+//     else
+//     {
+//         cout << "prime number" << endl;
+//     }
+// }
 
-bool checkNumber(int n)
-{
+// #include <iostream>
+// using namespace std;
 
-    if (n % 2 == 0)
-    { // check the number is even or odd
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
+// bool checkNumber(int n)
+// {
 
-int main()
-{
+//     if (n % 2 == 0)
+//     { // check the number is even or odd
+//         return true;
+//     }
+//     else
+//     {
+//         return false;
+//     }
+// }
 
-    int n;
-    cout << "Enter an numer here : " << endl;
-    cin >> n;
+// int main()
+// {
 
-    bool ans = checkNumber(n);
+//     int n;
+//     cout << "Enter an numer here : " << endl;
+//     cin >> n;
 
-    if (ans == 1)
-    {
-        cout << "Number is even" << endl;
-    }
-    else
-    {
-        cout << "Number is odd" << endl;
-    }
-}
+//     bool ans = checkNumber(n);
 
-#include <iostream>
-using namespace std;
+//     if (ans == 1)
+//     {
+//         cout << "Number is even" << endl;
+//     }
+//     else
+//     {
+//         cout << "Number is odd" << endl;
+//     }
+// }
 
-int sumofEvennumbers(int n)
-{
-    int sum = 0;
-    for (int i = 2; i <= n; i++)
-    { // sum of all even numbers 1 to N
-        if (i % 2 == 0)
-        {
-            sum = sum + i;
-        }
-    }
-    return sum;
-}
+// #include <iostream>
+// using namespace std;
 
-int main()
-{
+// int sumofEvennumbers(int n)
+// {
+//     int sum = 0;
+//     for (int i = 2; i <= n; i++)
+//     { // sum of all even numbers 1 to N
+//         if (i % 2 == 0)
+//         {
+//             sum = sum + i;
+//         }
+//     }
+//     return sum;
+// }
 
-    int n;
-    cout << "Enter an number here : " << endl;
-    cin >> n;
-    int ans = sumofEvennumbers(n);
-    cout << "sum of all even numbers : " << ans << endl;
-}
+// int main()
+// {
 
-#include <iostream>
-using namespace std;
+//     int n;
+//     cout << "Enter an number here : " << endl;
+//     cin >> n;
+//     int ans = sumofEvennumbers(n);
+//     cout << "sum of all even numbers : " << ans << endl;
+// }
 
-int sumofnumbers(int n)
-{
-    int sum = 0;
-    for (int i = 0; i <= n; i++)
-    {
-        sum = sum + i;
-    }
-    return sum;
-}
+// #include <iostream>
+// using namespace std;
 
-// sum of all numbers upto N
+// int sumofnumbers(int n)
+// {
+//     int sum = 0;
+//     for (int i = 0; i <= n; i++)
+//     {
+//         sum = sum + i;
+//     }
+//     return sum;
+// }
 
-int main()
-{
+// // sum of all numbers upto N
 
-    int n;
-    cout << "Enter an number : " << endl;
-    cin >> n;
+// int main()
+// {
 
-    int ans = sumofnumbers(n);
-    cout << "sum of all numbers upto N : " << ans << endl;
-}
+//     int n;
+//     cout << "Enter an number : " << endl;
+//     cin >> n;
+
+//     int ans = sumofnumbers(n);
+//     cout << "sum of all numbers upto N : " << ans << endl;
+// }
 
 
 
@@ -200,6 +202,7 @@ int main()
 //sum of all odd number in an array 
 
 #include<iostream>
+#include<queue>
 using namespace std;
 
 int sumofOddNumber(int arry[], int size){
@@ -215,6 +218,32 @@ int sumofOddNumber(int arry[], int size){
    return sum;
 }
 
+
+void levelorderTraversal(Node* root){
+     queue<Node*>q;
+     q.push(root);
+     q.push(NULL);
+
+     while(q >1){
+        Node* front = q.front();
+        q.pop();
+
+        if(front == NULL){
+            cout << endl;
+            q.push(NULL);
+        } else{
+            cout << front.data() << endl;
+            if(front->left != NULL){
+                q.push(front->left);
+            }
+            if(front->right != NULL){
+                q.push(front->right);
+            }
+        }
+     }
+
+}
+
 int main (){
    int arry[] = {1,2,3,4,6,5,7,9,11};
    int size = 9;
@@ -222,3 +251,8 @@ int main (){
    int ans = sumofOddNumber(arry, size);
    cout << "sum of odd numbers in array : " << ans << endl;
 }
+
+
+
+
+
