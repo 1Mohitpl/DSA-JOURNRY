@@ -208,6 +208,22 @@ Node* deletefromBST(Node* root, int target){
      return root;
 }
 
+Node* bsrfromInorder(int inorder[], int s, int e){
+     if(s>e){
+        return NULL;
+     }
+
+     int mid = (s+e)/2;
+
+     int element = inorder[mid];
+
+     Node* root = new Node(element);
+
+     // left is handle by recurssion 
+
+  root->left = bsrfromInorder(root->left, s, mid-1);
+  root->right = bsrfromInorder(root->right, mid+1, e);
+}
 
 int main(){
           

@@ -27,6 +27,31 @@ int main (){
 
 }
 
+#include<iostream>
+using namespace std;
+
+bool isprime(int x){
+     if(x & 1){
+         return true;
+     } else{ 
+        return false;
+     }
+}
+
+int main () {
+      int x;
+      cout << "Enter an number : " << endl;
+      cin >>x;
+      
+    int ans =  isprime(x);
+     if (ans  == 1)
+     {
+        cout << "odd number" << endl;
+     }
+     else{
+        cout << "even nmber" << endl;
+     }
+}
 
 
 
