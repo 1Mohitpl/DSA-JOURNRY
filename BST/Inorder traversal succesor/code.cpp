@@ -12,3 +12,17 @@ Node* findSucc(Node* root){
     }
     return succ;
 }
+
+ void findPreSuc(Node* root, Node*& pre, Node*& suc, int key)
+    {
+        // Your code goes here
+        Node* curr = root;
+        if(curr->left > key){
+           suc = curr;
+             curr = curr->left;
+        } else{
+             pre = curr;
+             curr = curr->right;
+        }
+    
+    }
