@@ -76,7 +76,6 @@ void levelOrderTraversal(Node* root){
 
    }
 }
-
 void preOrder(Node* root){
   if(root == NULL){
     return;
