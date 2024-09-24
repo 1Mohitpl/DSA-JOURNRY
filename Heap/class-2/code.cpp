@@ -12,4 +12,8 @@ int main(){
     pq.push(20);
 
     cout << "top element : " << pq.top() << endl;
+    pq.pop();
+    cout << "top element : " << pq.top() << endl;
+    
+
 }
