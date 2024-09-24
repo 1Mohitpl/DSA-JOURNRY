@@ -104,19 +104,59 @@ void heapify(int *arr, int n, int index){
 
 }
 
-int main() {
-    Heap h(20);
-    h.insert(10);
-    h.insert(20);
-    h.insert(5);
-    h.insert(11);
-    h.insert(6);
-    h.insert(16);
+  void buildHeap(int arr[], int n){
+    for(int index = n/2; index>0; index--){
+        heapify(arr, n, index);
+    }
+  }
 
-    h.printHeap();  // Print heap elements
-  int ans =  h.deletNode();
-  cout << "delete node :" << ans << endl;
-  h.printHeap();
+  void heapsort(int arr[], int n){
+     while( n>1){
+      swap(arr[1], arr[n]);
+      // delete size
+      n--;
+      heapify(arr, n, 1);
+     }
+  }
+int main() {
+    int arr[] = {-1, 5,10, 15, 20, 25, 12};
+
+    int n = 6;
+    buildHeap(arr, n);
+   
+   cout << "printing the heap : " << endl;
+    for(int i = 1; i<=n;i++){
+        cout <<arr[i] << " "; 
+    }
+    cout << endl;
+    
+    heapsort(arr, n);
+  cout << "sorting the heap : " << endl;
+    for(int i = 1; i<=n;i++){
+        cout <<arr[i] << " "; 
+    }
+    cout << endl;
+    
+    
+    
+    
+    
+    // Heap h(20);
+//     h.insert(10);
+//     h.insert(20);
+//     h.insert(5);
+//     h.insert(11);
+//     h.insert(6);
+//     h.insert(16);
+
+//     h.printHeap();  // Print heap elements
+//   int ans =  h.deletNode();
+//   cout << "delete node :" << ans << endl;
+//   h.printHeap();
+//   buildHeap();
+
+//   h.printHeap();
+
 
     return 0;
 }
