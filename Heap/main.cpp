@@ -81,6 +81,29 @@ public:
     }
 };
 
+void heapify(int *arr, int n, int index){
+    int leftIndex = 2*index;
+    int rightIndex = 2*index+1;
+    int largestIndex = index;
+    
+    // compare its value to his right or left index
+
+    if(leftIndex  <=n && arr[leftIndex] > arr[largestIndex]){
+          largestIndex = leftIndex;
+    }
+    if( rightIndex <=n && arr[rightIndex] > arr[largestIndex]){
+        largestIndex = rightIndex;
+    }
+
+    // now largestIndex will be largest element among 3
+    if(index != largestIndex){
+        swap(arr[index], arr[largestIndex]);
+        index = largestIndex;
+        heapify(arr, n, index);
+    }
+
+}
+
 int main() {
     Heap h(20);
     h.insert(10);
