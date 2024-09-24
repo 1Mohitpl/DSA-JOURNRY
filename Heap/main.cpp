@@ -24,7 +24,7 @@ public:
         int index = size;
         arr[index] = val;
 
-        // Take the value to its right position
+        // Take the value to its correct position
         while (index > 1) {
             int parentIndex = index / 2;
             // If current index is greater than parent index
@@ -43,6 +43,42 @@ public:
         }
         
     }
+
+    int deletNode(){
+        int element = arr[1];  // store the root of the tree;
+
+        // replacepent;
+        swap(arr[1], arr[size]);
+        
+        // delete the position of last element
+        size--;
+        int index =1;
+        while (index<size)
+        {
+            int leftchild = 2*index;
+            int rightchild = 2*index+1;
+
+            // findout largest element
+            int largestIndex = index;
+
+            // check the left child
+            if(leftchild <= size && arr[largestIndex] < arr[leftchild]){
+                largestIndex = leftchild;
+            }
+            if(rightchild <=size && arr[largestIndex] < arr[rightchild]){
+                largestIndex = rightchild;
+            }
+
+            // if no change
+            if(index == largestIndex){
+                break;
+            } else{
+                swap(arr[index], arr[largestIndex]);
+                index = largestIndex;
+            }
+        }
+        return element;
+    }
 };
 
 int main() {
@@ -55,6 +91,9 @@ int main() {
     h.insert(16);
 
     h.printHeap();  // Print heap elements
-    
+  int ans =  h.deletNode();
+  cout << "delete node :" << ans << endl;
+  h.printHeap();
+
     return 0;
 }
