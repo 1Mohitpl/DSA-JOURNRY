@@ -93,7 +93,7 @@ void deleteNode(Node*& head, Node*& tail, int position) {
         Node* prev = head;
         while (prev->pointer != tail) {
             prev = prev->pointer;
-        }
+        } 
         delete tail;
         tail = prev;
         tail->pointer = NULL;
