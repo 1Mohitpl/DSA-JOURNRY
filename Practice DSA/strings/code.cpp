@@ -31,6 +31,16 @@ void convertToUpper(char ch[], int n ){
     }
 }
 
+void replacewithSpace(char ch[], int n){
+    int index = 0;
+    while(ch[index] != '\0'){
+        if(ch[index] == '@'){
+            ch[index] = ' ';
+        }
+        index ++;
+    }
+}
+
 int main (){
      char ch[100];
     //  cin >> ch;   // single line of taking input 
@@ -47,6 +57,9 @@ int main (){
 //    reverseString(ch, len);
 //    cout << "after reverse the string " << ch <<endl;
 
-   convertToUpper(ch, 100);
-   cout << ch << endl;
+//    convertToUpper(ch, 100);
+//    cout << ch << endl;
+
+   replacewithSpace(ch, 100);
+   cout << ch <<endl;
 }
