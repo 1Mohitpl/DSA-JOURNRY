@@ -50,15 +50,15 @@ int main (){
    
 
 
-    //  cout << "printing the character array : " << ch <<endl; 
-    //  cout << "length of the array :" << len << endl;  // not need of for loop for printing array
-//    cout << "before revrse the string" << " " << ch << endl;
-//     int len = findlength(ch, 100);
-//    reverseString(ch, len);
-//    cout << "after reverse the string " << ch <<endl;
+     cout << "printing the character array : " << ch <<endl; 
+     cout << "length of the array :" << len << endl;  // not need of for loop for printing array
+   cout << "before revrse the string" << " " << ch << endl;
+    int len = findlength(ch, 100);
+   reverseString(ch, len);
+   cout << "after reverse the string " << ch <<endl;
 
-//    convertToUpper(ch, 100);
-//    cout << ch << endl;
+   convertToUpper(ch, 100);
+   cout << ch << endl;
 
    replacewithSpace(ch, 100);
    cout << ch <<endl;
