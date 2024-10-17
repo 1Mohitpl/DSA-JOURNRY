@@ -23,4 +23,7 @@ int main (){
 
     cout << "size of map :" << map.size() << endl;
     cout << map.at("mohit") << endl;
+    
+    // searching
+    cout << map.count("mohit") << endl;
 }
