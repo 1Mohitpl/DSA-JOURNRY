@@ -1,16 +1,14 @@
+# DSA Practice Solutions
 
-# DSA JOURNEY
+Most Welcome to my Stack of Data Struture and Algorithms learning and Practice Journey. Here you can see my learning of every concepts of DSA and Algorithms, Along with that my Solutions to various DSA problems flatfrom like Leetcode, GFG.
 
-solving daily daily leetcode problems helps me to strong my problem skills. 
-
-
-## Tech
+## Language 
 
 I choose C++ to learn Data strcture and algorithms  
+
 ## 🚀 About Me
 I'm a full stack developer..
 
-
 ## Contributing
 
 Contributions are always welcome!
@@ -19,20 +17,6 @@ See `contributing.md` for ways to get started.
 
 Please adhere to this project's `code of conduct`.
 
-
-
-
-## Contributing
-
-Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
-
-
-## 🚀 About Me
-I'm a full stack developer...
 
 
 
