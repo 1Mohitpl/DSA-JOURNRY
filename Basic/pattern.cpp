@@ -1,15 +1,89 @@
+// create number using digits
 #include<iostream>
 using namespace std;
 
-int main () {
-  int n = 5;
-  int sum = 0;
-  for(int i= 1; i<=n; i++){
-      sum+=i;
-    
-  }
-    cout <<sum;
+int createNum (int numsize){
+     int number = 0;
+     for(int i = 0; i<numsize; i++){
+         int digit;
+         cout << "Enter digit :" << endl;
+         cin >> digit;
+         number = number * 10 + digit;
+         cout << "number is created so far :"  << number << endl;
+     }
+     return number;
 }
+
+int main () {
+     int numsize;
+     cout << "Enter size of num : " << endl;
+     cin >> numsize;
+     int num = createNum(numsize);
+     cout << "created number ->" << num << endl;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// #include<iostream>
+// using namespace std;
+
+// int main () {
+//   int n = 5;
+//   int sum = 0;
+//   for(int i= 1; i<=n; i++){
+//       sum+=i;
+    
+//   }
+//     cout <<sum;
+// }
 
 
 
