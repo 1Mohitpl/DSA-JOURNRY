@@ -3,7 +3,7 @@ using namespace std;
 
 void swapAdjacent(vector<int>& arr) {
     int N = arr.size();
-    for (int i = 0; i < N - 1; i += 2) {
+    for (int i = 0; i < N - 1; i += 2) {  // i value is alwasys increase by 2 place
         swap(arr[i], arr[i + 1]);
     }
 }

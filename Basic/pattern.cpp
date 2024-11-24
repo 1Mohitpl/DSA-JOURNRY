@@ -1,26 +1,81 @@
-// create number using digits
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int createNum (int numsize){
-     int number = 0;
-     for(int i = 0; i<numsize; i++){
-         int digit;
-         cout << "Enter digit :" << endl;
-         cin >> digit;
-         number = number * 10 + digit;
-         cout << "number is created so far :"  << number << endl;
+// Function to square a number
+int squareNum(int num) {
+     if(num == 0){
+          return 0;
      }
-     return number;
+    return num * num;  // Directly return the square
 }
 
-int main () {
-     int numsize;
-     cout << "Enter size of num : " << endl;
-     cin >> numsize;
-     int num = createNum(numsize);
-     cout << "created number ->" << num << endl;    
+int main() {
+    int t;
+    cout << "Enter the test case :" << endl;
+    cin >> t;  // Read the number of test cases
+     int num;
+    while (true) {
+       
+        cout << "Enter the num :" << endl;
+        cin >> num;  // Read the number for squaring
+        
+        // Compute the square using the function
+         
+        
+        // Output the result
+        cout << squareNum(num) << endl;
+    }
+    return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // create number using digits
+// #include<iostream>
+// using namespace std;
+
+// int createNum (int numsize){
+//      int number = 0;
+//      for(int i = 0; i<numsize; i++){
+//          int digit;
+//          cout << "Enter digit :" << endl;
+//          cin >> digit;
+//          number = number * 10 + digit;
+//          cout << "number is created so far :"  << number << endl;
+//      }
+//      return number;
+// }
+
+// int main () {
+//      int numsize;
+//      cout << "Enter size of num : " << endl;
+//      cin >> numsize;
+//      int num = createNum(numsize);
+//      cout << "created number ->" << num << endl;    
+// }
 
 
 
