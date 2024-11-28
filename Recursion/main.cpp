@@ -2,30 +2,51 @@
 using namespace std;
 
 
-void printArray(int arr[], int n, int index){
+// void printArray(int arr[], int n, int index){
 
-      //base case 
-      if(index >=n){
-        return ;                            // printing array of elements using recurrsion
-      }
+//       //base case 
+//       if(index >=n){
+//         return ;                            // printing array of elements using recurrsion
+//       }
 
-    //  cout << arr[index] << " ";
+//     //  cout << arr[index] << " ";
 
-     // recursive call
+//      // recursive call
 
-     printArray(arr, n, index+1);
-      cout << arr[index] << " ";
+//      printArray(arr, n, index+1);
+//       cout << arr[index] << " ";
+// }
+
+bool checksorted(int arr[], int n, int index){
+       if(index >= n){
+          return true;
+
+       }
+
+       if(arr[index] < arr[index+1]){
+       
+             return  checksorted(arr, n, index+1);
+           
+       } else{
+        return false;
+       }
 }
 
 
-
-
 int main(){
- int arr[] = {10,20,30,40,50};
+ int arr[] = {10,20,30, 5, 40,50};
  int n = 5;
 
  int index = 0;
-  printArray(arr, n, index);
+  // printArray(arr, n, index);
+  
+ bool issorted =  checksorted(arr, n, index);
+
+  if(issorted){
+     cout << "array is sorted" << endl;
+  } else{
+    cout << "array is not sorted" << endl;
+  }
 
 }
 
