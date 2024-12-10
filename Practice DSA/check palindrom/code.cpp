@@ -1,31 +1,88 @@
-// check the string is palindrom or not using RE
+
 #include<iostream>
 using namespace std;
 
-bool ispalindrom(string&s, int start, int end) {
-
-    if(start>=end){
-        return true;
-    }
-
-    if (s[start] != s[end])
-    {
-         return false;
-    }
-     return ispalindrom(s, start+1, end-1);
+void convertarray(int arr[], int size){
+     int i = 0;
+    int j = 1;
+    while(j<size){
+            if(arr[i] <= arr[j]){
+                swap(arr[i], arr[j]);
+                i = i+2;
+                j = j+2;
+            }
+        }
 }
 
-int main (){
+int main () {
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = 5;
 
-    string s;
-    cout << "Enter an string" << endl;
-    cin >>s;
-   cout << ispalindrom(s, 0, s.size()-1) << endl;
+    convertarray(arr,5);
+    for(int i = 0; i<size; i++){
+        cout << arr[i] << endl;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // check the string is palindrom or not using RE
+// #include<iostream>
+// using namespace std;
+
+// bool ispalindrom(string&s, int start, int end) {
+
+//     if(start>=end){
+//         return true;
+//     }
+
+//     if (s[start] != s[end])
+//     {
+//          return false;
+//     }
+//      return ispalindrom(s, start+1, end-1);
+// }
+
+// int main (){
+
+//     string s;
+//     cout << "Enter an string" << endl;
+//     cin >>s;
+//    cout << ispalindrom(s, 0, s.size()-1) << endl;
   
      
 
 
-}
+// }
 
 // #include<iostream>
 // using namespace std;
