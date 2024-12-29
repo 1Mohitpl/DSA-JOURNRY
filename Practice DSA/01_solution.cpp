@@ -1,3 +1,113 @@
+
+// prefix sum 
+#include<iostream>
+#include<vector>
+using namespace std;
+
+  void  runningSum(vector<int>&v){
+      for(int i = 1; i<v.size();  i++){
+         v[i]+= v[i-1];
+      }
+      return;
+  }
+
+
+int main(){
+   int n;
+   cout << "Enter a size of array :" << endl;
+   cin>>n;
+   vector<int>v;
+
+   for(int i = 0; i<n; i++){
+        int element;
+        cout << "Enter the elements :" <<endl;
+        cin >> element;
+        v.push_back(element);
+   }
+
+     runningSum(v);
+
+     for(int i =0; i<n; i++){
+         cout << v[i] << " ";
+     } 
+     cout << endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // //reverse the string using recurrsion
 
 // #include<iostream>
@@ -201,56 +311,56 @@
 
 //sum of all odd number in an array 
 
-#include<iostream>
-#include<queue>
-using namespace std;
+// #include<iostream>
+// #include<queue>
+// using namespace std;
 
-int sumofOddNumber(int arry[], int size){
-   int sum = 0;
-   for (int i = 0; i < size; i++)
-   {
-      if (arry[i] % 2 == 1)
-      {
-         sum += arry[i];
-      }
+// int sumofOddNumber(int arry[], int size){
+//    int sum = 0;
+//    for (int i = 0; i < size; i++)
+//    {
+//       if (arry[i] % 2 == 1)
+//       {
+//          sum += arry[i];
+//       }
       
-   }
-   return sum;
-}
+//    }
+//    return sum;
+// }
 
 
-void levelorderTraversal(Node* root){
-     queue<Node*>q;
-     q.push(root);
-     q.push(NULL);
+// void levelorderTraversal(Node* root){
+//      queue<Node*>q;
+//      q.push(root);
+//      q.push(NULL);
 
-     while(q >1){
-        Node* front = q.front();
-        q.pop();
+//      while(q >1){
+//         Node* front = q.front();
+//         q.pop();
 
-        if(front == NULL){
-            cout << endl;
-            q.push(NULL);
-        } else{
-            cout << front.data() << endl;
-            if(front->left != NULL){
-                q.push(front->left);
-            }
-            if(front->right != NULL){
-                q.push(front->right);
-            }
-        }
-     }
+//         if(front == NULL){
+//             cout << endl;
+//             q.push(NULL);
+//         } else{
+//             cout << front.data() << endl;
+//             if(front->left != NULL){
+//                 q.push(front->left);
+//             }
+//             if(front->right != NULL){
+//                 q.push(front->right);
+//             }
+//         }
+//      }
 
-}
+// }
 
-int main (){
-   int arry[] = {1,2,3,4,6,5,7,9,11};
-   int size = 9;
+// int main (){
+//    int arry[] = {1,2,3,4,6,5,7,9,11};
+//    int size = 9;
 
-   int ans = sumofOddNumber(arry, size);
-   cout << "sum of odd numbers in array : " << ans << endl;
-}
+//    int ans = sumofOddNumber(arry, size);
+//    cout << "sum of odd numbers in array : " << ans << endl;
+// }
 
 
 
