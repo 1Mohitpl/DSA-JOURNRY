@@ -1,37 +1,53 @@
+// print all the elements in array
 
-// prefix sum 
 #include<iostream>
 #include<vector>
 using namespace std;
 
-  void  runningSum(vector<int>&v){
-      for(int i = 1; i<v.size();  i++){
-         v[i]+= v[i-1];
+void printelement(int arr[], int size, int index ){
+      if(index >= size){
+        return;
       }
-      return;
+
+
+
+      printelement(arr, size, index+1);
+       
+        cout << arr[index] << " ";
+       
+}
+
+ void evenNumber(int arr[], int size, int index, vector<int>&ans){
+        if(index >=size){
+            return;
+        }
+
+        if(arr[index] % 2 == 0){
+             ans.push_back(arr[index]);
+        }
+
+        evenNumber(arr, size, index+1, ans);
+ }
+
+int main() {
+      int arr[] = {1,3, 4, 5, 6, 7,8,9};
+      int size = 8;
+      int index = 0;
+
+      vector<int>ans;
+
+     
+      evenNumber(arr, size, index, ans);
+
+  for(int i = 0; i<ans.size(); i++){
+       cout << ans[i] << endl;
   }
 
+      
 
-int main(){
-   int n;
-   cout << "Enter a size of array :" << endl;
-   cin>>n;
-   vector<int>v;
-
-   for(int i = 0; i<n; i++){
-        int element;
-        cout << "Enter the elements :" <<endl;
-        cin >> element;
-        v.push_back(element);
-   }
-
-     runningSum(v);
-
-     for(int i =0; i<n; i++){
-         cout << v[i] << " ";
-     } 
-     cout << endl;
+      
 }
+
 
 
 
