@@ -22,8 +22,9 @@ void mergsort(int arr[], int start, int end,){
     mergsort(arr, s,mid);
     // for the right part
     mergsort(arr, mid+1, end);
-
-
+     
+    merge(arr, start, end);
+  
 }
 
 int main (){

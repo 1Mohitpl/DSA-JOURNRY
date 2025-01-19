@@ -39,3 +39,35 @@ int main() {
 
     return 0;
 }
+
+
+ void quickSort(int arr[], int low, int high)
+    {
+          if(low>= high){    // base case;
+               return;
+          }
+          
+          int pivot = high;
+          int s = low;
+          int e = low-1;
+          
+          while(s<pivot){
+              if(arr[s]<arr[pivot]){
+                  e++;
+             
+                  swap(arr[e],arr[s]);
+                  
+              }
+              s++;
+              
+          }
+          e++;
+        swap(arr[e], arr[pivot]);
+        quickSort(arr, low, e-1);
+        quickSort(arr, e+1, high );
+         
+          
+          
+          
+    }
+    
