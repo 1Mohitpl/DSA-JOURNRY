@@ -48,3 +48,24 @@ int solvememo(vector<int>&dp, int n){
         return ans;
     }
 
+/* do i do space optimization in this problem*/
+// step: identyfi the pattern,
+
+ int solveopti(int n){
+      int prev = 0;
+      int curr = 1;
+      if(n<=1){
+         return n;
+      }
+      int ans;
+      for(int i = 2; i<=n; i++){
+          ans = curr + prev;
+          prev = curr;
+          curr = ans;
+      }
+      return ans;
+  }
+    int fib(int n) {
+        return solveopti(n);
+    }
+
