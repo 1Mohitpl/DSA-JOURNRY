@@ -44,41 +44,41 @@ int main(){
 
 // previous smaller element
 
-#include<iostream>
-#include<stack>
-#include<vector>
-using namespace std;
+// #include<iostream>
+// #include<stack>
+// #include<vector>
+// using namespace std;
 
-vector<int> previousSmallerElement(int *arr, int size, vector<int> &ans){
+// vector<int> previousSmallerElement(int *arr, int size, vector<int> &ans){
 
-  stack<int>st;
-  st.push(-1);
+//   stack<int>st;
+//   st.push(-1);
 
-  for (int i = 0; i <=size-1; i++){
-        int curr = arr[i];
-        while (st.top() >= curr)
-        {
-           st.pop();
-        }
+//   for (int i = 0; i <=size-1; i++){
+//         int curr = arr[i];
+//         while (st.top() >= curr)
+//         {
+//            st.pop();
+//         }
         
-        ans[i] = st.top();
-        st.push(curr);
-  }
+//         ans[i] = st.top();
+//         st.push(curr);
+//   }
 
-  return ans;
+//   return ans;
   
-}
+// }
 
-int main (){
-    int arr[] = {8,4,6,2,3};
-    int size = 5;
-    vector<int>ans(size);
-    ans = previousSmallerElement(arr, size, ans);
-    for(auto i: ans){
-      cout << i << " ";
+// int main (){
+//     int arr[] = {8,4,6,2,3};
+//     int size = 5;
+//     vector<int>ans(size);
+//     ans = previousSmallerElement(arr, size, ans);
+//     for(auto i: ans){
+//       cout << i << " ";
 
-    }
+//     }
 
-    cout << endl;
+//     cout << endl;
 
-}
+// }
