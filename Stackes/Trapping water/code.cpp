@@ -46,3 +46,33 @@ int trap(vector<int>& height) {
 
 
 }
+
+// most optimal approach using two pointrer approach
+// time complexity will be O(N);
+// space complexity will be O(1);
+
+int trap(vector<int>& height) {
+    int n = height.size();
+    // taking two pointer
+    int left = 0;
+    int right = n-1;
+    int  ans = 0;
+    // initialize our left and right max value
+    int leftmax = 0;
+    int rightmax = 0;
+
+    while(left<right){
+        leftmax = max(leftmax, height[left]);
+        rightmax= max(rightmax, height[right]);
+
+        if(leftmax < rightmax){
+            ans += (leftmax - height[left]);
+            left++;
+        } else {
+           ans += (rightmax - height[right]);
+             
+            right--;
+        }
+    }
+    return ans;
+}
