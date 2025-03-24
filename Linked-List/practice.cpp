@@ -24,6 +24,9 @@ Node () {
      
   }
 
+     ~Node() {
+        cout << "destractor is called :" << this->data << endl;
+     }
 
 
 
@@ -69,6 +72,70 @@ void insertHead (Node* &head, Node* &tail, int data) {
     }
      
 }
+
+void insertTail(Node* &head, Node* &tail, int data){
+     
+     if(head == NULL){
+        Node* newnode = new Node(data);
+        head = newnode;
+        tail = newnode;
+     } else {
+        // create a new node
+        Node* temp = new Node(data);
+        temp->next = head;
+        head = temp;
+     }
+}
+
+
+void deletNode (Node* &head, Node* &tail, int data){
+
+    // emty ll is
+    if(head == NULL) {
+        cout << "linklist is empty" << endl;
+    }
+
+
+    if(position == 1) {
+        // delet the head node
+
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        delete temp;
+    }
+
+
+    if(position  == length){
+        // tail delete
+        Node* prev = NULL;
+        while(prev->next != NULL) {
+            prev = prev->next;
+        }
+
+        prev->next = NULL;
+        delete tail;
+        tail = prev;
+    }
+
+    else {
+         
+        Node* prev = NULL;
+        Node* curr = head;
+
+        while(position != 1) {
+            position--;
+            prev->next =  head;
+            prev = curr;
+        }
+
+        prev->next = curr->next;
+        curr->next = NULL;
+        delete curr;
+    }
+}
+
+
 
 int main() {
     Node * first = new Node(100);
