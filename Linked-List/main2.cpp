@@ -60,6 +60,16 @@ void insertAtTail(Node*& head, Node*& tail, int val) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 void createTail(Node*& head, Node*& tail, int val) {
     Node* temp = head;
     while (temp->pointer != NULL) {

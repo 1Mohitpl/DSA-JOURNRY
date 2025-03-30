@@ -2,6 +2,7 @@
 using namespace std;
 
 class Node {
+    public:
     int data;
     Node* prev;
     Node* next;
@@ -18,7 +19,9 @@ class Node {
         this->prev = NULL;
         this->next = NULL;
     }
-
+    ~Node() {
+        
+    }
 };
 
 
@@ -26,7 +29,7 @@ class Node {
     Node* temp  = head;
     while(temp != NULL){
         
-        cout << temp->data << endl;
+        cout << temp->data << "->";
         temp = temp->next;
     }
  }
@@ -45,7 +48,11 @@ class Node {
  void insertAtHead(Node* &head, Node* &tail, int data) {
        // check if LL is empty or not
        if(head == NULL) {
-         cout << "LL is empty" << endl;
+          // that means head & tail pointing to the same Node
+          Node* newnode = new Node(data);
+          head = newnode;
+          tail = newnode;
+
        } else {
         Node* temp = new Node(data);
         temp->next = head;
@@ -55,9 +62,97 @@ class Node {
 }
 
 
+void insertatTail(Node* &head, Node* &tail, int data){
+    // check if LL is empty
+    if(head == NULL) {
+        Node* newnode = new Node(data);
+        head = newnode;
+        tail = newnode;
+    } else {
+
+        Node* temp = new Node(data);
+        temp->prev = tail;
+        tail->next = temp;
+        tail = temp; 
+    }
+}
+
+
+void insertATposition(Node* &head, Node* &tail, int data, int position){
+
+    if(head == NULL) {
+        Node* newnode = new Node(data);
+        head = newnode;
+        tail = newnode;
+    } else {
+
+        Node* prev = NULL;
+        Node* curr = head;
+        Node* newnode = new Node(data);
+        while(position != 1) {
+            position--;
+            prev = curr;
+            curr = curr->next;
+
+        }
+        prev->next = newnode;
+        newnode->prev = prev;
+        newnode->next = curr;
+        curr->prev = newnode;
+
+    }
+}
+
+
+void deleteAtHead(Node* &head, Node* &tail, int data, int posi) {
+      if(head == NULL) {
+         cout << "empty LL" << endl;
+      } 
+
+    int len = findLen(head);
+      if(len == 1) {
+         // one element 
+         delete head;
+      }
+      
+      if(posi == len) {
+        // delete from tail 
+
+        Node* newnode = tail->prev;
+        newnode->next = NULL;
+        tail->prev = NULL;
+        delete tail;
+        tail =  newnode;
+      }
+      
+      
+      else {
+
+        Node* temp = head;
+        head = head->next;
+        temp->next = NULL;
+        head->prev = NULL;
+        delete temp;
+      }
+}
+
+
 
 int main () {
+     Node* head = NULL;
+     Node* tail = NULL;
+     insertAtHead(head, tail, 10);
+     insertAtHead(head, tail, 20);
+     insertAtHead(head, tail, 30);
+     insertAtHead(head, tail, 40);
+     insertAtHead(head, tail, 50);
+
+     insertATposition(head, tail, 500, 2);
+     print(head);
      
+
+    //  print(head);
+
 }
 
 
