@@ -1,31 +1,53 @@
 
+// #include<iostream>
+// using namespace std;
+
+// void convertarray(int arr[], int size){
+//      int i = 0;
+//     int j = 1;
+//     while(j<size){
+//             if(arr[i] <= arr[j]){
+//                 swap(arr[i], arr[j]);
+//                 i = i+2;
+//                 j = j+2;
+//             }
+//         }
+// }
+
+// int main () {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     int size = 5;
+
+//     convertarray(arr,5);
+//     for(int i = 0; i<size; i++){
+//         cout << arr[i] << endl;
+//     }
+
+// }
+
 #include<iostream>
 using namespace std;
 
-void convertarray(int arr[], int size){
-     int i = 0;
-    int j = 1;
-    while(j<size){
-            if(arr[i] <= arr[j]){
-                swap(arr[i], arr[j]);
-                i = i+2;
-                j = j+2;
-            }
+int solve(int arr[], int n){
+    int eleage = 18;
+    int count = 0;
+
+    for(int i = 0; i<n; i++){
+        if(arr[i] >= eleage){
+            count++;
         }
+    }
+    return count;
 }
 
 int main () {
-    int arr[] = {1, 2, 3, 4, 5};
-    int size = 5;
 
-    convertarray(arr,5);
-    for(int i = 0; i<size; i++){
-        cout << arr[i] << endl;
-    }
+    int arr[] = {10, 20, 15, 23, 30};
+    int n = 5;
 
+    int ans = solve(arr, n);
+    cout << ans << endl;
 }
-
-
 
 
 
