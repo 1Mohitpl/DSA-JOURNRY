@@ -1,0 +1,24 @@
+ void doubleit(ListNode*head, int &carry) {
+          if(!head){
+            return ;
+          }
+
+          doubleit(head->next, carry); // recurrsion call
+
+          int pord = head->val * 2 + carry;
+          head->val = pord%10;
+          carry = pord/10;
+        
+   }
+    ListNode* doubleIt(ListNode* head) {
+        
+        int carry = 0;
+        doubleit(head, carry);
+          if(carry){
+            ListNode* newnode = new ListNode(carry);
+            newnode->next = head;
+            head = newnode;
+          
+          }
+        return head;
+    }
